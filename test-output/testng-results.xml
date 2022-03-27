@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="17" total="17" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite-Login-UserMgmt" duration-ms="612" started-at="2022-01-22T16:07:18 IST" finished-at="2022-01-22T16:07:19 IST">
+    <groups>
+    </groups>
+    <test name="Test-Login-UserMgmt" duration-ms="612" started-at="2022-01-22T16:07:18 IST" finished-at="2022-01-22T16:07:19 IST">
+    </test> <!-- Test-Login-UserMgmt -->
+  </suite> <!-- Suite-Login-UserMgmt -->
+</testng-results>

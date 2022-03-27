@@ -1,0 +1,22 @@
+Run("C:\Program Files\Colasoft Packet Player 2.1\pktplayer.exe")
+WinWait('Colasoft Packet Player')
+Sleep(5000)
+ControlClick("Colasoft Packet Player", "", "[CLASS:Button; INSTANCE:5]")
+Sleep(2000)
+ControlClick("Colasoft Packet Player", "", "[CLASS:Button; INSTANCE:3]")
+Sleep(2000)
+ControlFocus("Open","","Edit1")
+ControlSetText("Open","","Edit1","C:\Users\Mandira\Downloads\CH1Line1Pcap")
+ControlClick("Open","","Button1")
+ControlClick("Colasoft Packet Player", "", "[CLASS:Button; INSTANCE:7]")
+Sleep(1000)
+ControlSetText("Colasoft Packet Player","","Edit2","")
+;play button click
+Sleep(2000)
+ControlFocus("Colasoft Packet Player","","Button1")
+ControlClick("Colasoft Packet Player", "", "[CLASS:Button; INSTANCE:1]")
+Sleep(2000)
+ControlClick("Colasoft Packet Player", "", "[CLASS:Button; INSTANCE:11]")
+
+
+;ControlClick("Colasoft Packet Player","","Button11")

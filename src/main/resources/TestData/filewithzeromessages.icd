@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  example ICD file for UCA Implementation Guideline 9-2LE -->
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd">
+	<Header id="9-2LE-Spec" nameStructure="IEDName" version="2.1" revision="4">
+		<History>
+			<Hitem version="2.1" revision="0" when="2004-07-07" who="Christoph Brunner" what="Original Release 9-2LE 2.1" why="Release to UCA"/>
+			<Hitem version="2.1" revision="1" when="2013-08-14" who="Dean Ouellette" what="Revision of data model" why="">
+				1. SV data model incorrect
+				2. Mandatory objects missing
+			</Hitem>
+			<Hitem version="2.1" revision="2" when="2013-08-14" who="Bruce Muschlitz" what="Revision of data model" why="" >
+				1. Remove optional components
+				2. Add  missing mandatory components
+				3. Add Val elements
+				4. Change type of Mod from INT32 to enum-Beh
+			</Hitem>
+			<Hitem version="2.1" revision="3" when="2013-08-16" who="Roman Graf" what="corrections to meet 9-2LE" why="" >
+				1. substation section: IED/LD references added
+				2. communication section corrected to match IED section
+				3. trigger option corrected in 9-2LEINC; ctlVal removed
+				4. several errors in data type templates still to be corrected in a next revision
+			</Hitem>
+			<Hitem version="2.1" revision="4" when="2013-08-19" who="Roman Graf" what="name and data type template corrections" why="" >
+				1. substation section: TEMPLATE in names
+				2. mandatory DOs added to data type templates
+				3. several errors in data type templates corrected: trigger options; use of standard enum types; valKind RO for q and t with fc="ST" or "MX"
+			</Hitem>
+			<Hitem version="2.1" revision="5" when="2013-12-11" who="Bruce Muschlitz" what="change FCDA from instMag to instMag.i" why="" >
+				1. DataSet/FCDA attribute daName changes for "instMag" to "instMag.i"
+			</Hitem>
+		</History>
+	</Header>
+	<Substation name="TEMPLATE">
+		<VoltageLevel name="Template">
+			<Bay name="Template">
+				<ConductingEquipment name="Inn" type="CTR">
+					<SubEquipment name="A" phase="A"> 
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="1"/>
+					</SubEquipment>
+					<SubEquipment name="B" phase="B">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="2"/>
+					</SubEquipment>
+					<SubEquipment name="C" phase="C">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="3"/>
+					</SubEquipment>
+					<SubEquipment name="N" phase="N">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="4"/>
+					</SubEquipment>
+				</ConductingEquipment>
+				<ConductingEquipment name="Unn" type="VTR">
+					<SubEquipment name="A" phase="A">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="1"/>
+					</SubEquipment>
+					<SubEquipment name="B" phase="B">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="2"/>
+					</SubEquipment>
+					<SubEquipment name="C" phase="C">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="3"/>
+					</SubEquipment>
+					<SubEquipment name="N" phase="N">
+						<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="4"/>
+					</SubEquipment>
+				</ConductingEquipment>
+			</Bay>
+		</VoltageLevel>
+	</Substation>
+	<Communication>
+		<SubNetwork name="subnet1" type="8-MMS">
+			<ConnectedAP iedName="TEMPLATE" apName="S1">
+				<SMV ldInst="MU01" cbName="MSVCB01">
+					<Address>
+						<P type="VLAN-ID">9</P>
+						<P type="VLAN-PRIORITY">4</P>
+						<P type="MAC-Address">01-0C-CD-04-00-00</P>
+						<P type="APPID">4000</P>
+					</Address>
+				</SMV>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED name="TEMPLATE">
+		<AccessPoint name="S1">
+			<Server>
+				<Authentication/>
+					<LDevice inst="MU01">
+						<LN0 lnType="9-2LELLN0" lnClass="LLN0" inst="">
+							<DataSet name="PhsMeas1">
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="5" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="5" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="6" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="6" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="7" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="7" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="8" doName="Amp" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TCTR" lnInst="8" doName="Amp" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="5" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="5" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="6" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="6" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="7" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="7" doName="Vol" daName="q" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="8" doName="Vol" daName="instMag.i" fc="MX"/>
+								<FCDA ldInst="MU01" lnClass="TVTR" lnInst="9" doName="Vol" daName="q" fc="MX"/>
+							</DataSet>
+							<SampledValueControl name="MSVCB01" datSet="PhsMeas1" smvID="RMXU_Smv_60_ID" smpRate="80" nofASDU="8" confRev="1">
+								<SmvOpts refreshTime="false" sampleSynchronized="true" sampleRate="false" security="false" dataRef="false"/>
+							</SampledValueControl>
+						</LN0>
+						<LN lnType="9-2LELPHD" lnClass="LPHD" inst="1"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="1"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="2"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="3"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="4"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="1"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="2"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="3"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="4"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="5"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="6"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="7"/>
+						<LN lnType="9-2LETCTR" lnClass="TCTR" inst="8"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="5"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="6"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="7"/>
+						<LN lnType="9-2LETVTR" lnClass="TVTR" inst="8"/>
+					</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="9-2LELPHD" lnClass="LPHD">
+			<DO name="PhyNam" type="9-2LEPHYNAM"/>
+			<DO name="PhyHealth" type="9-2LEINS_HEALTH"/>
+			<DO name="Proxy" type="9-2LEPROXY"/>
+		</LNodeType>
+		<LNodeType id="9-2LELLN0" lnClass="LLN0">
+			<DO name="Mod" type="9-2LEINC"/>
+			<DO name="Beh" type="9-2LEINS_BEH"/>
+			<DO name="Health" type="9-2LEINS_HEALTH"/>
+			<DO name="NamPlt" type="9-2LELN0LPL"/>
+		</LNodeType>
+		<LNodeType id="9-2LETCTR" lnClass="TCTR">
+			<DO name="Mod" type="9-2LEINC"/>
+			<DO name="Beh" type="9-2LEINS_BEH"/>
+			<DO name="Health" type="9-2LEINS_HEALTH"/>
+			<DO name="NamPlt" type="9-2LELNLPL"/>
+			<DO name="Amp" type="9-2LESAVAmp"/>
+		</LNodeType>
+		<LNodeType id="9-2LETVTR" lnClass="TVTR">
+			<DO name="Mod" type="9-2LEINC"/>
+			<DO name="Beh" type="9-2LEINS_BEH"/>
+			<DO name="Health" type="9-2LEINS_HEALTH"/>
+			<DO name="NamPlt" type="9-2LELNLPL"/>
+			<DO name="Vol" type="9-2LESAVVol"/>
+		</LNodeType>
+		<DOType id="9-2LEINS_BEH" cdc="INS">
+			<DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true">
+				<Val>on</Val>
+			</DA>
+			<DA name="q" bType="Quality" fc="ST"  valKind="RO" qchg="true"/>
+			<DA name="t" bType="Timestamp" fc="ST" valKind="RO"/>
+		</DOType>
+		<DOType id="9-2LEINS_HEALTH" cdc="INS">
+			<DA name="stVal" bType="Enum" type="HealthKind" fc="ST" dchg="true">
+				<Val>Ok</Val>
+			</DA>
+			<DA name="q" bType="Quality" valKind="RO" qchg="true" fc="ST"/>
+			<DA name="t" bType="Timestamp" fc="ST" valKind="RO"/>
+		</DOType>
+		<DOType id="9-2LESAVAmp" cdc="SAV">
+			<DA name="instMag" bType="Struct" type="9-2LEAV" fc="MX"/>
+			<DA name="q" bType="Quality" fc="MX" valKind="RO" qchg="true"/>
+			<DA name="sVC" bType="Struct" type="9-2LEsVCAmp" fc="CF"/>
+		</DOType>
+		<DOType id="9-2LESAVVol" cdc="SAV">
+			<DA name="instMag" bType="Struct" type="9-2LEAV" fc="MX"/>
+			<DA name="q" bType="Quality" fc="MX" valKind="RO" qchg="true"/>
+			<DA name="sVC" bType="Struct" type="9-2LEsVCVol" fc="CF"/>
+		</DOType>
+		<DOType id="9-2LEINC" cdc="INC">
+			<DA name="stVal" fc="ST" bType="Enum" type="Mod" dchg="true">
+				<Val>on</Val>
+			</DA>
+			<DA name="q" fc="ST" bType="Quality" valKind="RO" qchg="true"/>
+			<DA name="t" fc="ST" bType="Timestamp" valKind="RO"/>
+			<DA name="ctlModel" bType="Enum" type="CtlModelKind" fc="CF">
+				<Val>status-only</Val> 
+			</DA>
+		</DOType>
+		<DOType id="9-2LELN0LPL" cdc="LPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="swRev" bType="VisString255" fc="DC"/>
+			<DA name="d" bType="VisString255" fc="DC"/>
+			<DA name="configRev" bType="VisString255" fc="DC"/>
+			<DA name="ldNs" bType="VisString255" fc="EX">
+				<Val>IEC 61850-7-4:2003</Val>
+			</DA>
+		</DOType>
+		<DOType id="9-2LELNLPL" cdc="LPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+			<DA name="swRev" bType="VisString255" fc="DC"/>
+			<DA name="d" bType="VisString255" fc="DC"/>
+		</DOType>
+		<DOType id="9-2LEPROXY" cdc="SPS">
+			<DA name="stVal" bType="BOOLEAN" dchg="true" fc="ST">
+				<Val>false</Val>
+			</DA>
+			<DA name="q" bType="Quality" qchg="true" fc="ST" valKind="RO"/>
+			<DA name="t" bType="Timestamp" fc="ST" valKind="RO"/>
+		</DOType>
+		<DOType id="9-2LEPHYNAM" cdc="DPL">
+			<DA name="vendor" bType="VisString255" fc="DC"/>
+		</DOType>
+		<DAType id="9-2LEAV">
+			<BDA name="i" bType="INT32"/>
+		</DAType>
+		<DAType id="9-2LEsVCAmp">
+			<BDA name="scaleFactor" bType="FLOAT32">
+				<Val>0.001</Val>
+			</BDA>
+			<BDA name="offset" bType="FLOAT32">
+				<Val>0</Val>
+			</BDA>
+		</DAType>
+		<DAType id="9-2LEsVCVol">
+			<BDA name="scaleFactor" bType="FLOAT32">
+				<Val>0.01</Val>
+			</BDA>
+			<BDA name="offset" bType="FLOAT32">
+				<Val>0</Val>
+			</BDA>
+		</DAType>
+		<EnumType id="Beh">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="Mod">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="HealthKind">
+			<EnumVal ord="1">Ok</EnumVal>
+			<EnumVal ord="2">Warning</EnumVal>
+			<EnumVal ord="3">Alarm</EnumVal>
+		</EnumType>
+		<EnumType id="CtlModelKind">
+			<EnumVal ord="0">status-only</EnumVal>
+			<EnumVal ord="1">direct-with-normal-security</EnumVal>
+			<EnumVal ord="2">sbo-with-normal-security</EnumVal>
+			<EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+			<EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+		</EnumType>
+	</DataTypeTemplates>
+</SCL>

@@ -1,0 +1,569 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SCL version="2007" revision="B" xmlns:sxy="http://www.iec.ch/61850/2003/SCLcoordinates" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd http://www.iec.ch/61850/2003/SCLcoordinates SCL_Coordinates.xsd" xmlns="http://www.iec.ch/61850/2003/SCL">
+  <Header revision="A" version="1" id="ab6a86f6-d095-4c8e-befc-6f5b60652c5d" toolID="Grid Software SCL Matrix" nameStructure="IEDName">
+    <Text>IOP 2017 SLD R2</Text>
+    <History>
+      <Hitem revision="A" version="1" when="2017-04-27T10:28:19Z" who="Grid Software SCL Matrix" what="SSD Export" />
+    </History>
+  </Header>
+  <Substation name="IOP">
+    <PowerTransformer name="Transformer A" type="PTR" sxy:x="9" sxy:y="33" desc="33.3 MVA&#xD;&#xA;230 kV - 14.4 kV&#xD;&#xA;Dyn1" virtual="false">
+      <TransformerWinding name="W1" desc="W1" type="PTW">
+        <Terminal connectivityNode="IOP/D1/TXA/S9710PTRCN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="S9710PTRCN" />
+      </TransformerWinding>
+      <TransformerWinding name="W2" desc="W2" type="PTW">
+        <Terminal connectivityNode="IOP/K1/INCOMER A/TRANS. #1CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="TRANS. #1CTRCN" />
+      </TransformerWinding>
+    </PowerTransformer>
+    <PowerTransformer name="Transformer B" type="PTR" sxy:x="41" sxy:y="33" desc="33.3 MVA&#xD;&#xA;230 kV - 14.4 kV&#xD;&#xA;Dyn1" virtual="false">
+      <TransformerWinding name="W1" desc="W1" type="PTW">
+        <Terminal connectivityNode="IOP/D1/TXB/S9710PTRCN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="S9710PTRCN" />
+      </TransformerWinding>
+      <TransformerWinding name="W2" desc="W2" type="PTW">
+        <Terminal connectivityNode="IOP/K1/INCOMER B/TRANS. #1CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="TRANS. #1CTRCN" />
+      </TransformerWinding>
+    </PowerTransformer>
+    <VoltageLevel name="D1" numPhases="3" nomFreq="60">
+      <LNode iedName="None" ldInst="LD0" lnClass="PDIF" lnInst="1" />
+      <Voltage unit="V" multiplier="k">230</Voltage>
+      <Bay name="LINE 1" sxy:x="14" sxy:y="0" desc="OCB #N9111">
+        <LNode iedName="None" ldInst="LD0" lnClass="PDIF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PDIS" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="LINE 1" type="IFL" sxy:x="1" sxy:y="0" sxy:dir="horizontal">
+          <Terminal connectivityNode="IOP/D1/LINE 1/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_L1" type="CBR" sxy:x="3" sxy:y="5">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="RREC" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="RSYN" lnInst="1" />
+          <Terminal connectivityNode="IOP/D1/LINE 1/DIS1S9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="DIS1S9597CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 1/CTRS9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="CTRS9597CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="VT" type="VTR" sxy:y="2" sxy:x="2" sxy:dir="horizontal">
+          <Terminal connectivityNode="IOP/D1/LINE 1/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_L11" type="DIS" sxy:x="3" sxy:y="9">
+          <Terminal connectivityNode="IOP/D1/230kV BUS/CN" substationName="IOP" voltageLevelName="D1" bayName="230kV BUS" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 1/DISCTRCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="DISCTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="3" sxy:y="7">
+          <Terminal connectivityNode="IOP/D1/LINE 1/CTRS9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="CTRS9597CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 1/DISCTRCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="DISCTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_L12" type="DIS" sxy:x="3" sxy:y="3">
+          <Terminal connectivityNode="IOP/D1/LINE 1/DIS1S9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="DIS1S9597CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 1/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_L13" type="DIS" sxy:x="6" sxy:y="3" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/D1/LINE 1/grounded" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="grounded" />
+          <Terminal connectivityNode="IOP/D1/LINE 1/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 1" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="CBRIFLCN" pathName="IOP/D1/LINE 1/CBRIFLCN" sxy:x="3" sxy:y="2" />
+        <ConnectivityNode name="DIS1S9597CN" pathName="IOP/D1/LINE 1/DIS1S9597CN" sxy:x="3" sxy:y="4" />
+        <ConnectivityNode name="CTRS9597CN" pathName="IOP/D1/LINE 1/CTRS9597CN" sxy:x="3" sxy:y="6" />
+        <ConnectivityNode name="DISCTRCN" pathName="IOP/D1/LINE 1/DISCTRCN" sxy:x="3" sxy:y="8" />
+        <ConnectivityNode name="grounded" pathName="IOP/D1/LINE 1/grounded" />
+      </Bay>
+      <Bay name="TXA" sxy:x="7" sxy:y="15">
+        <LNode iedName="None" ldInst="LD0" lnClass="PDIF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="CB_TXA" type="CBR" sxy:x="2" sxy:y="5">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/D1/TXA/S9710DIS1CN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="S9710DIS1CN" />
+          <Terminal connectivityNode="IOP/D1/TXA/CB_TXACT1CN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="CB_TXACT1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_TXA1" type="DIS" sxy:x="2" sxy:y="1">
+          <Terminal connectivityNode="IOP/D1/230kV BUS/CN" substationName="IOP" voltageLevelName="D1" bayName="230kV BUS" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/D1/TXA/DS_TXA1CT1CN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="DS_TXA1CT1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT2" type="CTR" sxy:x="2" sxy:y="9">
+          <Terminal connectivityNode="IOP/D1/TXA/S9710PTRCN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="S9710PTRCN" />
+          <Terminal connectivityNode="IOP/D1/TXA/DS_TXA2CTCN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="DS_TXA2CTCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_TXA2" type="DIS" sxy:x="2" sxy:y="7">
+          <Terminal connectivityNode="IOP/D1/TXA/S9710DIS1CN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="S9710DIS1CN" />
+          <Terminal connectivityNode="IOP/D1/TXA/DS_TXA2CTCN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="DS_TXA2CTCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT1" type="CTR" sxy:x="2" sxy:y="3">
+          <Terminal connectivityNode="IOP/D1/TXA/DS_TXA1CT1CN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="DS_TXA1CT1CN" />
+          <Terminal connectivityNode="IOP/D1/TXA/CB_TXACT1CN" substationName="IOP" voltageLevelName="D1" bayName="TXA" cNodeName="CB_TXACT1CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="S9710PTRCN" pathName="IOP/D1/TXA/S9710PTRCN" sxy:x="2" sxy:y="10" />
+        <ConnectivityNode name="DS_TXA2CTCN" pathName="IOP/D1/TXA/DS_TXA2CTCN" sxy:x="2" sxy:y="8" />
+        <ConnectivityNode name="DS_TXA1CT1CN" pathName="IOP/D1/TXA/DS_TXA1CT1CN" sxy:x="2" sxy:y="2" />
+        <ConnectivityNode name="S9710DIS1CN" pathName="IOP/D1/TXA/S9710DIS1CN" sxy:x="2" sxy:y="6" />
+        <ConnectivityNode name="CB_TXACT1CN" pathName="IOP/D1/TXA/CB_TXACT1CN" sxy:x="2" sxy:y="4" />
+      </Bay>
+      <Bay name="LINE 2" sxy:x="29" sxy:y="0" desc="OCB #N9111">
+        <LNode iedName="None" ldInst="LD0" lnClass="PDIF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PDIS" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="LINE 2" type="IFL" sxy:x="1" sxy:y="0" sxy:dir="horizontal">
+          <Terminal connectivityNode="IOP/D1/LINE 2/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_L2" type="CBR" sxy:x="3" sxy:y="5">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="RREC" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="RSYN" lnInst="1" />
+          <Terminal connectivityNode="IOP/D1/LINE 2/DIS1S9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="DIS1S9597CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 2/CTRS9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="CTRS9597CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="VT" type="VTR" sxy:y="2" sxy:x="2" sxy:dir="horizontal">
+          <Terminal connectivityNode="IOP/D1/LINE 2/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_L21" type="DIS" sxy:x="3" sxy:y="9">
+          <Terminal connectivityNode="IOP/D1/230kV BUS/CN" substationName="IOP" voltageLevelName="D1" bayName="230kV BUS" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 2/DISCTRCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="DISCTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="3" sxy:y="7">
+          <Terminal connectivityNode="IOP/D1/LINE 2/CTRS9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="CTRS9597CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 2/DISCTRCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="DISCTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_L22" type="DIS" sxy:x="3" sxy:y="3">
+          <Terminal connectivityNode="IOP/D1/LINE 2/DIS1S9597CN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="DIS1S9597CN" />
+          <Terminal connectivityNode="IOP/D1/LINE 2/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_L23" type="DIS" sxy:x="6" sxy:y="3" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/D1/LINE 2/grounded" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="grounded" />
+          <Terminal connectivityNode="IOP/D1/LINE 2/CBRIFLCN" substationName="IOP" voltageLevelName="D1" bayName="LINE 2" cNodeName="CBRIFLCN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="CBRIFLCN" pathName="IOP/D1/LINE 2/CBRIFLCN" sxy:x="3" sxy:y="2" />
+        <ConnectivityNode name="DIS1S9597CN" pathName="IOP/D1/LINE 2/DIS1S9597CN" sxy:x="3" sxy:y="4" />
+        <ConnectivityNode name="CTRS9597CN" pathName="IOP/D1/LINE 2/CTRS9597CN" sxy:x="3" sxy:y="6" />
+        <ConnectivityNode name="DISCTRCN" pathName="IOP/D1/LINE 2/DISCTRCN" sxy:x="3" sxy:y="8" />
+        <ConnectivityNode name="grounded" pathName="IOP/D1/LINE 2/grounded" />
+      </Bay>
+      <Bay name="TXB" sxy:x="39" sxy:y="15">
+        <LNode iedName="None" ldInst="LD0" lnClass="PDIF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="CB_TXB" type="CBR" sxy:x="2" sxy:y="5">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/D1/TXB/S9710DIS1CN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="S9710DIS1CN" />
+          <Terminal connectivityNode="IOP/D1/TXB/CT1CB_TXBCN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="CT1CB_TXBCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_TXB1" type="DIS" sxy:x="2" sxy:y="1">
+          <Terminal connectivityNode="IOP/D1/230kV BUS/CN" substationName="IOP" voltageLevelName="D1" bayName="230kV BUS" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/D1/TXB/DS_TXB1CT1CN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="DS_TXB1CT1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT2" type="CTR" sxy:x="2" sxy:y="9">
+          <Terminal connectivityNode="IOP/D1/TXB/S9710PTRCN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="S9710PTRCN" />
+          <Terminal connectivityNode="IOP/D1/TXB/DS_TXB2CTCN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="DS_TXB2CTCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_TXB2" type="DIS" sxy:x="2" sxy:y="7">
+          <Terminal connectivityNode="IOP/D1/TXB/S9710DIS1CN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="S9710DIS1CN" />
+          <Terminal connectivityNode="IOP/D1/TXB/DS_TXB2CTCN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="DS_TXB2CTCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT1" type="CTR" sxy:x="2" sxy:y="3">
+          <Terminal connectivityNode="IOP/D1/TXB/DS_TXB1CT1CN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="DS_TXB1CT1CN" />
+          <Terminal connectivityNode="IOP/D1/TXB/CT1CB_TXBCN" substationName="IOP" voltageLevelName="D1" bayName="TXB" cNodeName="CT1CB_TXBCN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="S9710PTRCN" pathName="IOP/D1/TXB/S9710PTRCN" sxy:x="2" sxy:y="10" />
+        <ConnectivityNode name="DS_TXB1CT1CN" pathName="IOP/D1/TXB/DS_TXB1CT1CN" sxy:x="2" sxy:y="2" />
+        <ConnectivityNode name="DS_TXB2CTCN" pathName="IOP/D1/TXB/DS_TXB2CTCN" sxy:x="2" sxy:y="8" />
+        <ConnectivityNode name="S9710DIS1CN" pathName="IOP/D1/TXB/S9710DIS1CN" sxy:x="2" sxy:y="6" />
+        <ConnectivityNode name="CT1CB_TXBCN" pathName="IOP/D1/TXB/CT1CB_TXBCN" sxy:x="2" sxy:y="4" />
+      </Bay>
+      <Bay name="230kV BUS" sxy:y="13" sxy:x="1">
+        <ConnectivityNode name="CN" pathName="IOP/D1/230kV BUS/CN" sxy:x="0" sxy:y="12" />
+      </Bay>
+      <Bay name="BUS VT" sxy:x="24" sxy:y="15">
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="VT" type="VTR" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/D1/230kV BUS/CN" substationName="IOP" voltageLevelName="D1" bayName="230kV BUS" cNodeName="CN" />
+        </ConductingEquipment>
+      </Bay>
+    </VoltageLevel>
+    <VoltageLevel name="K1" numPhases="3" nomFreq="60" sxy:x="0" sxy:y="35">
+      <Voltage unit="V" multiplier="k">14.4</Voltage>
+      <Bay name="INCOMER A" sxy:y="0" sxy:x="5">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="3" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <PowerTransformer name="SS" type="PTR" sxy:x="2" sxy:y="2" sxy:dir="horizontal">
+          <TransformerWinding name="W1" desc="W1" type="PTW">
+            <Terminal connectivityNode="IOP/K1/INCOMER A/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511CTRCN" />
+          </TransformerWinding>
+          <TransformerWinding name="W2" desc="W2" type="PTW" />
+        </PowerTransformer>
+        <ConductingEquipment name="CT2" type="CTR" sxy:x="4" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511CTRCN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER A/TRANS. #1CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="TRANS. #1CTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="VT" type="VTR" sxy:x="8" sxy:y="3" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511CTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_INC_A1" type="DIS" sxy:x="4" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511_W5511CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511_W5511CN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511DCTR1CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511DCTR1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_INC_A" type="CBR" sxy:x="4" sxy:y="5" desc="2000A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511_W5511CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511_W5511CN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER A/DISCB_INC_ACN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="DISCB_INC_ACN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT1" type="CTR" sxy:x="4" sxy:y="9">
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511DCTR1CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511DCTR1CN" />
+          <Terminal connectivityNode="IOP/K1/14.4kV BUS A/CN" substationName="IOP" voltageLevelName="K1" bayName="14.4kV BUS A" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_INC_A2" type="DIS" sxy:x="4" sxy:y="3">
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511CTRCN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER A/DISCB_INC_ACN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="DISCB_INC_ACN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_INC_A3" type="DIS" sxy:x="8" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/INCOMER A/W5511_W5511CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="W5511_W5511CN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER A/grounded" substationName="IOP" voltageLevelName="K1" bayName="INCOMER A" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConnectivityNode name="W5511CTRCN" pathName="IOP/K1/INCOMER A/W5511CTRCN" sxy:x="4" sxy:y="2" />
+        <ConnectivityNode name="W5511_W5511CN" pathName="IOP/K1/INCOMER A/W5511_W5511CN" sxy:x="4" sxy:y="6" />
+        <ConnectivityNode name="TRANS. #1CTRCN" pathName="IOP/K1/INCOMER A/TRANS. #1CTRCN" sxy:x="4" sxy:y="0" />
+        <ConnectivityNode name="W5511DCTR1CN" pathName="IOP/K1/INCOMER A/W5511DCTR1CN" sxy:x="4" sxy:y="8" />
+        <ConnectivityNode name="DISCB_INC_ACN" pathName="IOP/K1/INCOMER A/DISCB_INC_ACN" sxy:x="4" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/INCOMER A/grounded" />
+      </Bay>
+      <Bay name="14.4kV BUS A" sxy:x="0" sxy:y="17">
+        <ConnectivityNode name="CN" pathName="IOP/K1/14.4kV BUS A/CN" sxy:x="0" sxy:y="14" />
+      </Bay>
+      <Bay name="A2" sxy:x="11" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_A22" type="DIS" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/A2/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/14.4kV BUS A/CN" substationName="IOP" voltageLevelName="K1" bayName="14.4kV BUS A" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_A2" type="CBR" sxy:x="1" sxy:y="3" desc="1200A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/A2/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/A2/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="W5512IFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="Feeder A2" type="IFL" sxy:x="1" sxy:y="10">
+          <Terminal connectivityNode="IOP/K1/A2/CTFeeder A2CN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="CTFeeder A2CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A2" type="DIS" sxy:x="4" sxy:y="3">
+          <LNode iedName="None" ldInst="LD0" lnClass="XSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Transfer BUS XF/CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer BUS XF" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/A2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A23" type="DIS" sxy:x="4" sxy:y="7" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/A2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/A2/grounded" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A21" type="DIS" sxy:x="1" sxy:y="5">
+          <Terminal connectivityNode="IOP/K1/A2/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="W5512IFLCN" />
+          <Terminal connectivityNode="IOP/K1/A2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="1" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/A2/CTFeeder A2CN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="CTFeeder A2CN" />
+          <Terminal connectivityNode="IOP/K1/A2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A2" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="DISCBRCN" pathName="IOP/K1/A2/DISCBRCN" sxy:y="2" sxy:x="1" />
+        <ConnectivityNode name="W5512IFLCN" pathName="IOP/K1/A2/W5512IFLCN" sxy:x="1" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/A2/grounded" />
+        <ConnectivityNode name="DISFeeder A1CN" pathName="IOP/K1/A2/DISFeeder A1CN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="CTFeeder A2CN" pathName="IOP/K1/A2/CTFeeder A2CN" sxy:x="1" sxy:y="8" />
+      </Bay>
+      <Bay name="Transfer BUS XF" sxy:x="0" sxy:y="15">
+        <ConnectivityNode name="CN" pathName="IOP/K1/Transfer BUS XF/CN" sxy:x="0" sxy:y="12" />
+      </Bay>
+      <Bay name="A1" sxy:x="3" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_A12" type="DIS" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/A1/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/14.4kV BUS A/CN" substationName="IOP" voltageLevelName="K1" bayName="14.4kV BUS A" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_A1" type="CBR" sxy:x="1" sxy:y="3" desc="1200A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/A1/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/A1/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="W5512IFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="Feeder A1" type="IFL" sxy:x="1" sxy:y="10">
+          <Terminal connectivityNode="IOP/K1/A1/CTFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="CTFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A1" type="DIS" sxy:x="4" sxy:y="3">
+          <LNode iedName="None" ldInst="LD0" lnClass="XSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Transfer BUS XF/CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer BUS XF" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/A1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A13" type="DIS" sxy:x="4" sxy:y="7" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/A1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/A1/grounded" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A11" type="DIS" sxy:x="1" sxy:y="5">
+          <Terminal connectivityNode="IOP/K1/A1/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="W5512IFLCN" />
+          <Terminal connectivityNode="IOP/K1/A1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="1" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/A1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/A1/CTFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A1" cNodeName="CTFeeder A1CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="DISCBRCN" pathName="IOP/K1/A1/DISCBRCN" sxy:y="2" sxy:x="1" />
+        <ConnectivityNode name="W5512IFLCN" pathName="IOP/K1/A1/W5512IFLCN" sxy:x="1" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/A1/grounded" />
+        <ConnectivityNode name="DISFeeder A1CN" pathName="IOP/K1/A1/DISFeeder A1CN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="CTFeeder A1CN" pathName="IOP/K1/A1/CTFeeder A1CN" sxy:x="1" sxy:y="8" />
+      </Bay>
+      <Bay name="A3" sxy:x="19" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_A32" type="DIS" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/A3/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/14.4kV BUS A/CN" substationName="IOP" voltageLevelName="K1" bayName="14.4kV BUS A" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_A3" type="CBR" sxy:x="1" sxy:y="3" desc="1200A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/A3/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/A3/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="W5512IFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="Feeder A3" type="IFL" sxy:x="1" sxy:y="10">
+          <Terminal connectivityNode="IOP/K1/A3/CTFeeder A3CN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="CTFeeder A3CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A3" type="DIS" sxy:x="4" sxy:y="3">
+          <LNode iedName="None" ldInst="LD0" lnClass="XSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Transfer BUS XF/CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer BUS XF" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/A3/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A33" type="DIS" sxy:x="4" sxy:y="7" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/A3/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/A3/grounded" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_A31" type="DIS" sxy:x="1" sxy:y="5">
+          <Terminal connectivityNode="IOP/K1/A3/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="W5512IFLCN" />
+          <Terminal connectivityNode="IOP/K1/A3/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="1" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/A3/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/A3/CTFeeder A3CN" substationName="IOP" voltageLevelName="K1" bayName="A3" cNodeName="CTFeeder A3CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="DISCBRCN" pathName="IOP/K1/A3/DISCBRCN" sxy:y="2" sxy:x="1" />
+        <ConnectivityNode name="W5512IFLCN" pathName="IOP/K1/A3/W5512IFLCN" sxy:x="1" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/A3/grounded" />
+        <ConnectivityNode name="DISFeeder A1CN" pathName="IOP/K1/A3/DISFeeder A1CN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="CTFeeder A3CN" pathName="IOP/K1/A3/CTFeeder A3CN" sxy:x="1" sxy:y="8" />
+      </Bay>
+      <Bay name="Transfer Breaker" sxy:x="27" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_XF1" type="DIS" sxy:x="1" sxy:y="3">
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/W5516_W5516CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="W5516_W5516CN" />
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/CTRW5516DCN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="CTRW5516DCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_XF" type="CBR" sxy:x="2" sxy:y="6" desc="1200A, ACB" sxy:dir="horizontal">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/W5516_W5516CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="W5516_W5516CN" />
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/DISCB_XFCN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="DISCB_XFCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_XF3" type="DIS" sxy:x="4" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/DISCB_XFCN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="DISCB_XFCN" />
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/grounded" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:y="1" sxy:x="1">
+          <Terminal connectivityNode="IOP/K1/14.4kV BUS A/CN" substationName="IOP" voltageLevelName="K1" bayName="14.4kV BUS A" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/CTRW5516DCN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="CTRW5516DCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_XF2" type="DIS" sxy:x="4" sxy:y="3">
+          <Terminal connectivityNode="IOP/K1/Transfer Breaker/DISCB_XFCN" substationName="IOP" voltageLevelName="K1" bayName="Transfer Breaker" cNodeName="DISCB_XFCN" />
+          <Terminal connectivityNode="IOP/K1/Transfer BUS XF/CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer BUS XF" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="W5516_W5516CN" pathName="IOP/K1/Transfer Breaker/W5516_W5516CN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/Transfer Breaker/grounded" />
+        <ConnectivityNode name="CTRW5516DCN" pathName="IOP/K1/Transfer Breaker/CTRW5516DCN" sxy:x="1" sxy:y="2" />
+        <ConnectivityNode name="DISCB_XFCN" pathName="IOP/K1/Transfer Breaker/DISCB_XFCN" sxy:x="4" sxy:y="6" />
+      </Bay>
+      <Bay name="Bus Tie Breaker" sxy:x="35" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="3" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="4" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RDIR" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_BT1" type="DIS" sxy:x="1" sxy:y="3">
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/W5510DCTRCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="W5510DCTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_BT" type="CBR" sxy:x="2" sxy:y="6" desc="1200A, ACB" sxy:dir="horizontal">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/W5520DCB_BTCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="W5520DCB_BTCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/14.4kV BUS A/CN" substationName="IOP" voltageLevelName="K1" bayName="14.4kV BUS A" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/W5510DCTRCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="W5510DCTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_BT3" type="DIS" sxy:x="4" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/W5520DCB_BTCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="W5520DCB_BTCN" />
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/grounded" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_BT2" type="DIS" sxy:x="4" sxy:y="3">
+          <Terminal connectivityNode="IOP/K1/Bus Tie Breaker/W5520DCB_BTCN" substationName="IOP" voltageLevelName="K1" bayName="Bus Tie Breaker" cNodeName="W5520DCB_BTCN" />
+          <Terminal connectivityNode="IOP/K1/14,4kV BUS B/CN" substationName="IOP" voltageLevelName="K1" bayName="14,4kV BUS B" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="DISCBRCN" pathName="IOP/K1/Bus Tie Breaker/DISCBRCN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="W5510DCTRCN" pathName="IOP/K1/Bus Tie Breaker/W5510DCTRCN" sxy:x="1" sxy:y="2" />
+        <ConnectivityNode name="W5520DCB_BTCN" pathName="IOP/K1/Bus Tie Breaker/W5520DCB_BTCN" sxy:x="4" sxy:y="6" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/Bus Tie Breaker/grounded" />
+      </Bay>
+      <Bay name="INCOMER B" sxy:y="0" sxy:x="37">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="3" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <PowerTransformer name="SS" type="PTR" sxy:x="2" sxy:y="2" sxy:dir="horizontal">
+          <TransformerWinding name="W1" desc="W1" type="PTW">
+            <Terminal connectivityNode="IOP/K1/INCOMER B/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511CTRCN" />
+          </TransformerWinding>
+          <TransformerWinding name="W2" desc="W2" type="PTW" />
+        </PowerTransformer>
+        <ConductingEquipment name="CT2" type="CTR" sxy:x="4" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511CTRCN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER B/TRANS. #1CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="TRANS. #1CTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="VT" type="VTR" sxy:x="8" sxy:y="3" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511CTRCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_INC_B1" type="DIS" sxy:x="4" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511_W5511CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511_W5511CN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511DCTR1CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511DCTR1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_INC_B" type="CBR" sxy:x="4" sxy:y="5" desc="2000A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511_W5511CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511_W5511CN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER B/DISCB_INC_ACN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="DISCB_INC_ACN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT1" type="CTR" sxy:x="4" sxy:y="9">
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511DCTR1CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511DCTR1CN" />
+          <Terminal connectivityNode="IOP/K1/14,4kV BUS B/CN" substationName="IOP" voltageLevelName="K1" bayName="14,4kV BUS B" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_INC_B2" type="DIS" sxy:x="4" sxy:y="3">
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511CTRCN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511CTRCN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER B/DISCB_INC_ACN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="DISCB_INC_ACN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_INC_B3" type="DIS" sxy:x="8" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/INCOMER B/W5511_W5511CN" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="W5511_W5511CN" />
+          <Terminal connectivityNode="IOP/K1/INCOMER B/grounded" substationName="IOP" voltageLevelName="K1" bayName="INCOMER B" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConnectivityNode name="W5511CTRCN" pathName="IOP/K1/INCOMER B/W5511CTRCN" sxy:x="4" sxy:y="2" />
+        <ConnectivityNode name="W5511_W5511CN" pathName="IOP/K1/INCOMER B/W5511_W5511CN" sxy:x="4" sxy:y="6" />
+        <ConnectivityNode name="TRANS. #1CTRCN" pathName="IOP/K1/INCOMER B/TRANS. #1CTRCN" sxy:x="4" sxy:y="0" />
+        <ConnectivityNode name="W5511DCTR1CN" pathName="IOP/K1/INCOMER B/W5511DCTR1CN" sxy:x="4" sxy:y="8" />
+        <ConnectivityNode name="DISCB_INC_ACN" pathName="IOP/K1/INCOMER B/DISCB_INC_ACN" sxy:x="4" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/INCOMER B/grounded" />
+      </Bay>
+      <Bay name="14,4kV BUS B" sxy:x="0" sxy:y="19">
+        <ConnectivityNode name="CN" pathName="IOP/K1/14,4kV BUS B/CN" sxy:x="18" sxy:y="5" />
+      </Bay>
+      <Bay name="B1" sxy:x="43" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_B12" type="DIS" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/B1/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/14,4kV BUS B/CN" substationName="IOP" voltageLevelName="K1" bayName="14,4kV BUS B" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_B1" type="CBR" sxy:x="1" sxy:y="3" desc="1200A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/B1/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/B1/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="W5512IFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="Feeder B1" type="IFL" sxy:x="1" sxy:y="10">
+          <Terminal connectivityNode="IOP/K1/B1/CTFeeder B1CN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="CTFeeder B1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_B1" type="DIS" sxy:x="4" sxy:y="3">
+          <LNode iedName="None" ldInst="LD0" lnClass="XSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Transfer BUS XF/CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer BUS XF" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/B1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_B13" type="DIS" sxy:x="4" sxy:y="7" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/B1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/B1/grounded" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_B11" type="DIS" sxy:x="1" sxy:y="5">
+          <Terminal connectivityNode="IOP/K1/B1/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="W5512IFLCN" />
+          <Terminal connectivityNode="IOP/K1/B1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="1" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/B1/CTFeeder B1CN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="CTFeeder B1CN" />
+          <Terminal connectivityNode="IOP/K1/B1/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B1" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="DISCBRCN" pathName="IOP/K1/B1/DISCBRCN" sxy:y="2" sxy:x="1" />
+        <ConnectivityNode name="W5512IFLCN" pathName="IOP/K1/B1/W5512IFLCN" sxy:x="1" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/B1/grounded" />
+        <ConnectivityNode name="DISFeeder A1CN" pathName="IOP/K1/B1/DISFeeder A1CN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="CTFeeder B1CN" pathName="IOP/K1/B1/CTFeeder B1CN" sxy:x="1" sxy:y="8" />
+      </Bay>
+      <Bay name="B2" sxy:x="51" sxy:y="21" desc="PERRIN VILLAGE SQ. &#xD;&#xA;BUCCANEER S.">
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="PTOC" lnInst="2" />
+        <LNode iedName="None" ldInst="LD0" lnClass="RBRF" lnInst="1" />
+        <LNode iedName="None" ldInst="LD0" lnClass="MMXU" lnInst="1" />
+        <ConductingEquipment name="DS_B22" type="DIS" sxy:x="1" sxy:y="1">
+          <Terminal connectivityNode="IOP/K1/B2/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/14,4kV BUS B/CN" substationName="IOP" voltageLevelName="K1" bayName="14,4kV BUS B" cNodeName="CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CB_B2" type="CBR" sxy:x="1" sxy:y="3" desc="1200A, ACB">
+          <LNode iedName="None" ldInst="LD0" lnClass="XCBR" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/B2/DISCBRCN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="DISCBRCN" />
+          <Terminal connectivityNode="IOP/K1/B2/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="W5512IFLCN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="Feeder B2" type="IFL" sxy:x="1" sxy:y="10">
+          <Terminal connectivityNode="IOP/K1/B2/CTFeeder B2CN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="CTFeeder B2CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_B2" type="DIS" sxy:x="4" sxy:y="3">
+          <LNode iedName="None" ldInst="LD0" lnClass="XSWI" lnInst="1" />
+          <LNode iedName="None" ldInst="LD0" lnClass="CSWI" lnInst="1" />
+          <Terminal connectivityNode="IOP/K1/Transfer BUS XF/CN" substationName="IOP" voltageLevelName="K1" bayName="Transfer BUS XF" cNodeName="CN" />
+          <Terminal connectivityNode="IOP/K1/B2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_B23" type="DIS" sxy:x="4" sxy:y="7" sxy:dir="vertical">
+          <Terminal connectivityNode="IOP/K1/B2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/B2/grounded" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="grounded" />
+        </ConductingEquipment>
+        <ConductingEquipment name="DS_B21" type="DIS" sxy:x="1" sxy:y="5">
+          <Terminal connectivityNode="IOP/K1/B2/W5512IFLCN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="W5512IFLCN" />
+          <Terminal connectivityNode="IOP/K1/B2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="DISFeeder A1CN" />
+        </ConductingEquipment>
+        <ConductingEquipment name="CT" type="CTR" sxy:x="1" sxy:y="7">
+          <Terminal connectivityNode="IOP/K1/B2/DISFeeder A1CN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="DISFeeder A1CN" />
+          <Terminal connectivityNode="IOP/K1/B2/CTFeeder B2CN" substationName="IOP" voltageLevelName="K1" bayName="B2" cNodeName="CTFeeder B2CN" />
+        </ConductingEquipment>
+        <ConnectivityNode name="DISCBRCN" pathName="IOP/K1/B2/DISCBRCN" sxy:y="2" sxy:x="1" />
+        <ConnectivityNode name="W5512IFLCN" pathName="IOP/K1/B2/W5512IFLCN" sxy:x="1" sxy:y="4" />
+        <ConnectivityNode name="grounded" pathName="IOP/K1/B2/grounded" />
+        <ConnectivityNode name="DISFeeder A1CN" pathName="IOP/K1/B2/DISFeeder A1CN" sxy:x="1" sxy:y="6" />
+        <ConnectivityNode name="CTFeeder B2CN" pathName="IOP/K1/B2/CTFeeder B2CN" sxy:x="1" sxy:y="8" />
+      </Bay>
+    </VoltageLevel>
+  </Substation>
+</SCL>

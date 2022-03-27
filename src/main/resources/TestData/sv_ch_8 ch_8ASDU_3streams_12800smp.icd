@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2003/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2003/SCL SCL.xsd" 
+version="2007" revision="B">
+<Header id="ICD file as supplied by the manufacturer for a hypothetical IEC 61869-9 instrument transformer" version="1.0" revision="12" toolID="XML Notepad"/>
+<Substation name="TEMPLATE" desc="Binds the TCTR and TVTR instances in the IED section to particular phases of particular CTs/VTs in the station">
+<VoltageLevel name="TEMPLATE">
+<Bay name="TEMPLATE">
+<ConductingEquipment name="Inn" type="CTR">
+<SubEquipment name="A" phase="A">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="1"/>
+</SubEquipment>
+<SubEquipment name="B" phase="B">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="2"/>
+</SubEquipment>
+<SubEquipment name="C" phase="C">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="3"/>
+</SubEquipment>
+<SubEquipment name="N" phase="N">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TCTR" lnInst="4"/>
+</SubEquipment>
+</ConductingEquipment>
+<ConductingEquipment name="Unn" type="VTR">
+<SubEquipment name="A" phase="A">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="1"/>
+</SubEquipment>
+<SubEquipment name="B" phase="B">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="2"/>
+</SubEquipment>
+<SubEquipment name="C" phase="C">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="3"/>
+</SubEquipment>
+<SubEquipment name="N" phase="N">
+<LNode iedName="TEMPLATE" ldInst="MU01" lnClass="TVTR" lnInst="4"/>
+</SubEquipment>
+</ConductingEquipment>
+</Bay>
+</VoltageLevel>
+</Substation>
+<Communication>
+<SubNetwork name="NONE" type="8-MMS">
+<BitRate unit="b/s" multiplier="M">100</BitRate>
+<ConnectedAP iedName="TEMPLATE" apName="S1">
+<SMV ldInst="MU01" cbName="MSVCB01" desc="9-2LE SV stream (F4000S1I4U4 and F4800S1I4U4)">
+<Address>
+<P type="MAC-Address">01-0C-CD-04-00-00</P>
+<P type="VLAN-ID">000</P>
+<P type="VLAN-PRIORITY">4</P>
+<P type="APPID">4000</P>
+</Address>
+</SMV>
+<SMV ldInst="MU01" cbName="MSVCB03" desc="preferred stream for apps needing measuring or protective class (F4800S2I3U3)">
+<Address>
+<P type="MAC-Address">01-0C-CD-04-00-01</P>
+<P type="VLAN-ID">000</P>
+<P type="VLAN-PRIORITY">4</P>
+<P type="APPID">4003</P>
+</Address>
+</SMV>
+<SMV ldInst="MU01" cbName="MSVCB04" desc="preferred stream for apps needing quality metering class (F14400S6I3U3)">
+<Address>
+<P type="MAC-Address">01-0C-CD-04-00-02</P>
+<P type="VLAN-ID">000</P>
+<P type="VLAN-PRIORITY">4</P>
+<P type="APPID">4004</P>
+</Address>
+</SMV>
+<SMV ldInst="MU01" cbName="MSVCB05" desc="demonstration of a stream with one quantity (F4800S2I1U0)">
+<Address>
+<P type="MAC-Address">01-0C-CD-04-00-03</P>
+<P type="VLAN-ID">000</P>
+<P type="VLAN-PRIORITY">4</P>
+<P type="APPID">4005</P>
+</Address>
+</SMV>
+<PhysConn type="Connection">
+<P type="Type">FOC</P>
+<P type="Plug">ST</P>
+</PhysConn>
+</ConnectedAP>
+</SubNetwork>
+</Communication>
+<IED name="TEMPLATE" desc="Hypothetical instrument transformer with digital output according to IEC 61869-9">
+<AccessPoint name="S1">
+<Server>
+<Authentication none="true"/>
+<LDevice inst="MU01">
+<LN0 lnType="LN0" lnClass="LLN0" inst="">
+<DataSet name="PhsMeas1" desc="9-2LE dataset for SV streams F4000S1I4U4 and F4800S1I4U4">
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="VolSv" fc="MX" daName="q"/>
+</DataSet>
+<DataSet name="PhsMeas2" desc="dataset for preferred SV streams F4800S2I3U3 and F14400S6I3U3">
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="VolSv" fc="MX" daName="q"/>
+</DataSet>
+<DataSet name="PhsMeas3" desc="dataset for SV stream F4800S2I1U0">
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="1" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="2" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="3" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="AmpSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TCTR" lnInst="4" doName="AmpSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="1" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="2" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="3" doName="VolSv" fc="MX" daName="q"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="VolSv" fc="MX" daName="instMag.i"/>
+<FCDA ldInst="MU01" lnClass="TVTR" lnInst="4" doName="VolSv" fc="MX" daName="q"/>
+</DataSet>
+<SampledValueControl name="MSVSzCB01" datSet="PhsMeas1" confRev="1" smvID="xxxxMU0101" smpRate="80" smpMod="SmpPerPeriod" nofASDU="1" multicast="true">
+<SmvOpts sampleSynchronized="true" refreshTime="false" sampleRate="false" dataSet="false" security="false"/>
+</SampledValueControl>
+<SampledValueControl name="MSVSzCB03" datSet="PhsMeas2" confRev="1" smvID="4003" smpRate="12800" smpMod="SmpPerSec" nofASDU="8" multicast="true">
+<SmvOpts sampleSynchronized="true" refreshTime="false" sampleRate="false" dataSet="false" security="false"/>
+</SampledValueControl>
+<SampledValueControl name="MSVSzCB04" datSet="PhsMeas2" confRev="1" smvID="4004" smpRate="12800" smpMod="SmpPerSec" nofASDU="8" multicast="true">
+<SmvOpts sampleSynchronized="true" refreshTime="false" sampleRate="false" dataSet="false" security="false"/>
+</SampledValueControl>
+<SampledValueControl name="MSVSzCB05" datSet="PhsMeas3" confRev="1" smvID="4005" smpRate="12800" smpMod="SmpPerSec" nofASDU="8" multicast="true">
+<SmvOpts sampleSynchronized="true" refreshTime="false" sampleRate="false" dataSet="false" security="false"/>
+</SampledValueControl>
+</LN0>
+<LN lnType="PHD" lnClass="LPHD" inst="1"/>
+<LN lnType="CTR-P" lnClass="TCTR" inst="1"/>
+<LN lnType="CTR-P" lnClass="TCTR" inst="2"/>
+<LN lnType="CTR-P" lnClass="TCTR" inst="3"/>
+<LN lnType="CTR-N" lnClass="TCTR" inst="4"/>
+<LN lnType="VTR-P" lnClass="TVTR" inst="1"/>
+<LN lnType="VTR-P" lnClass="TVTR" inst="2"/>
+<LN lnType="VTR-P" lnClass="TVTR" inst="3"/>
+<LN lnType="VTR-N" lnClass="TVTR" inst="4"/>
+</LDevice>
+</Server>
+</AccessPoint>
+</IED>
+<DataTypeTemplates>
+<LNodeType id="LN0" lnClass="LLN0">
+<DO name="NamPlt" type="NamPlt-LN0"/>
+<DO name="Beh" type="Beh"/>
+<DO name="Health" type="Health"/>
+<DO name="Mod" type="Mod"/>
+</LNodeType>
+<LNodeType id="PHD" lnClass="LPHD">
+<DO name="PhyNam" type="PhyNam"/>
+<DO name="PhyHealth" type="Health"/>
+<DO name="Proxy" type="Proxy"/>
+<DO name="NamVariant" type="NamVariant"/>
+<DO name="NamHzRtg" type="NamHzRtg"/>
+<DO name="NamAuxVRtg" type="NamAuxVRtg"/>
+<DO name="NamHoldRtg" type="NamHoldRtg"/>
+</LNodeType>
+<LNodeType id="CTR-P" lnClass="TCTR">
+<DO name="Beh" type="Beh"/>
+<DO name="AmpSv" type="AmpSAV"/>
+<DO name="NamAccRtg" type="NamAccRtg-PC"/>
+<DO name="NamARtg" type="NamARtg-PC"/>
+<DO name="NamClipRtg" type="NamClipRtg-PC"/>
+</LNodeType>
+<LNodeType id="CTR-N" lnClass="TCTR">
+<DO name="Beh" type="Beh"/>
+<DO name="AmpSv" type="AmpSAV"/>
+<DO name="NamAccRtg" type="NamAccRtg-NC"/>
+<DO name="NamARtg" type="NamARtg-NC"/>
+<DO name="NamClipRtg" type="NamClipRtg-NC"/>
+</LNodeType>
+<LNodeType id="VTR-P" lnClass="TVTR">
+<DO name="Beh" type="Beh"/>
+<DO name="VolSv" type="VolSAV"/>
+<DO name="NamAccRtg" type="NamAccRtg-PV"/>
+<DO name="NamVRtg" type="NamVRtg-PV"/>
+<DO name="NamClipRtg" type="NamClipRtg-PV"/>
+</LNodeType>
+<LNodeType id="VTR-N" lnClass="TVTR">
+<DO name="Beh" type="Beh"/>
+<DO name="VolSv" type="VolSAV"/>
+<DO name="NamAccRtg" type="NamAccRtg-NV"/>
+<DO name="NamVRtg" type="NamVRtg-NV"/>
+<DO name="NamClipRtg" type="NamClipRtg-NV"/>
+</LNodeType>
+<DOType id="NamPlt-LN0" cdc="LPL">
+<DA name="vendor" desc="" bType="VisString255" fc="DC"/>
+<DA name="swRev" bType="VisString255" fc="DC">
+<Val>1v00</Val>
+</DA>
+<DA name="configRev" bType="VisString255" fc="DC">
+<Val>1</Val>
+</DA>
+<DA name="ldNs" bType="VisString255" fc="EX">
+<Val>IEC 61850-7-4:2007B</Val>
+</DA>
+</DOType>
+<DOType id="Beh" cdc="ENS">
+<DA name="stVal" bType="Enum" type="Beh" fc="ST" dchg="true" />
+<DA name="q" bType="Quality" fc="ST" qchg="true"/>
+<DA name="t" bType="Timestamp" fc="ST"/>
+</DOType>
+<DOType id="Health" cdc="ENS">
+<DA name="stVal" bType="Enum" type="Health" fc="ST" dchg="true" />
+<DA name="q" bType="Quality" fc="ST" qchg="true"/>
+<DA name="t" bType="Timestamp" fc="ST"/>
+</DOType>
+<DOType id="Mod" cdc="ENC">
+<DA name="stVal" bType="Enum" type="Mod" fc="ST" dchg="true"/>
+<DA name="q" bType="Quality" fc="ST" qchg="true"/>
+<DA name="t" bType="Timestamp" fc="ST"/>
+<DA name="ctlModel" bType="Enum" type="CtlModels" fc="CF" dchg="true">
+<Val>status-only</Val>
+</DA>
+</DOType>
+<DOType id="PhyNam" cdc="DPL">
+<DA name="vendor" bType="VisString255" fc="DC">
+<Val>Acme Manufacturing Ltd., 1 North Rodeo Drive, Beverley Hills, CA, 90210</Val>
+</DA>
+<DA name="hwRev" bType="VisString255" fc="DC">
+<Val>1v03</Val>
+</DA>
+<DA name="swRev" bType="VisString255" fc="DC">
+<Val>1v00</Val>
+</DA>
+<DA name="serNum" bType="VisString255" fc="DC">
+<Val>000001, mfg 2011-12-01</Val>
+</DA>
+<DA name="model" bType="VisString255" fc="DC">
+<Val>DigiMeas101</Val>
+</DA>
+</DOType>
+<DOType id="Proxy" cdc="SPS">
+<DA name="stVal" bType="BOOLEAN" fc="ST" dchg="true">
+<Val>false</Val>
+</DA>
+<DA name="q" bType="Quality" fc="ST" qchg="true"/>
+<DA name="t" bType="Timestamp" fc="ST"/>
+</DOType>
+<DOType id="NamVariant" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>F4800S1I4U4;F14400S6I4U4;F4800S2I0-24U0-24</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>a semicolon separated list of the variant codes supported, the codes being as defined in IEC 61869-9:2014 clause 6.903.2</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamHzRtg" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>dc; 50; 60</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>a semicolon separated list of the nominal frequencies (fR) supported, in Hertz</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamAuxVRtg" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>80-300 dc;100-250 ac</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>a semicolon separated list or hyphenated range of rated auxiliary power supply voltages (Uar) in volts, with indication of ac or dc where applicable</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamHoldRtg" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>10</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the rated holdover time in seconds</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamMaxDlRtg" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>1.5</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the rated delay time in milliseconds</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamAccRtg-PC" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>0,5S/5P20</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the accuracy class rating in the format described in IEC 61869-9 clause 5.6</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamARtg-PC" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>400;800;1200</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>rated primary currents (IPr) in amperes</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamClipRtg-PC" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>20</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val> the ratio of the clipping limit of the instantaneous current to the rated primary current multiplied with a square root of two</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamAccRtg-NC" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>1/5P</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the accuracy class rating in the format described in IEC 61869-9 clause 5.6</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamARtg-NC" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>400;800;1200</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val> rated primary currents (IPr) in amperes</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamClipRtg-NC" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>20</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val> the ratio of the clipping limit of the instantaneous current to the rated primary current multiplied with a square root of two</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamAccRtg-PV" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>0,5/3P</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the accuracy class rating in the format described in IEC 61869-9 clause 5.6</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamVRtg-PV" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>83716</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the rated primary voltage (UPr) in volts</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamClipRtg-PV" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>2</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the ratio of the clipping limit of the instantaneous voltage to the rated primary voltage multiplied with a square root of two</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamAccRtg-NV" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>1</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the accuracy class rating in the format described in IEC 61869-9 clause 5.6</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamVRtg-NV" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>115</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the rated primary voltage (UPr) in volts</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="NamClipRtg-NV" cdc="VSD">
+<DA name="val" bType="VisString255" fc="DC">
+<Val>2</Val>
+</DA>
+<DA name="d" bType="VisString255" fc="DC">
+<Val>the ratio of the clipping limit of the instantaneous voltage to the rated primary voltage multiplied with a square root of two</Val>
+</DA>
+<DA name="dataNs" bType="VisString255" fc="EX">
+<Val>IEC 61869-9:2015A</Val>
+</DA>
+</DOType>
+<DOType id="AmpSAV" cdc="SAV">
+<DA name="instMag" bType="Struct" type="AnalogueValue" fc="MX"/>
+<DA name="q" bType="Quality" fc="MX" qchg="true"/>
+<DA name="units" bType="Struct" type="AmpUnits" fc="CF" dchg="true"/>
+<DA name="sVC" bType="Struct" type="AmpScaledValueConfig" fc="CF" dchg="true"/>
+</DOType>
+<DOType id="VolSAV" cdc="SAV">
+<DA name="instMag" bType="Struct" type="AnalogueValue" fc="MX"/>
+<DA name="q" bType="Quality" fc="MX" qchg="true"/>
+<DA name="units" bType="Struct" type="VolUnits" fc="CF" dchg="true"/>
+<DA name="sVC" bType="Struct" type="VolScaledValueConfig" fc="CF" dchg="true"/>
+</DOType>
+<DAType id="AmpScaledValueConfig">
+<BDA name="scaleFactor" bType="FLOAT32">
+<Val>0.001</Val>
+</BDA>
+<BDA name="offset" bType="FLOAT32">
+<Val>0</Val>
+</BDA>
+</DAType>
+<DAType id="VolScaledValueConfig">
+<BDA name="scaleFactor" bType="FLOAT32">
+<Val>0.01</Val>
+</BDA>
+<BDA name="offset" bType="FLOAT32">
+<Val>0</Val>
+</BDA>
+</DAType>
+<DAType id="AmpUnits">
+<BDA name="SIUnit" bType="Enum" type="ITSIUnit">
+<Val>A</Val>
+</BDA>
+</DAType>
+<DAType id="VolUnits">
+<BDA name="SIUnit" bType="Enum" type="ITSIUnit">
+<Val>V</Val>
+</BDA>
+</DAType>
+<DAType id="AnalogueValue">
+<BDA name="i" bType="INT32"/>
+</DAType>
+<EnumType id="Mod">
+<EnumVal ord="1">on</EnumVal>
+<EnumVal ord="2">blocked</EnumVal>
+<EnumVal ord="3">test</EnumVal>
+<EnumVal ord="4">test/blocked</EnumVal>
+<EnumVal ord="5">off</EnumVal>
+</EnumType>
+<EnumType id="Beh">
+<EnumVal ord="1">on</EnumVal>
+<EnumVal ord="2">blocked</EnumVal>
+<EnumVal ord="3">test</EnumVal>
+<EnumVal ord="4">test/blocked</EnumVal>
+<EnumVal ord="5">off</EnumVal>
+</EnumType>
+<EnumType id="Health">
+<EnumVal ord="1">Ok</EnumVal>
+<EnumVal ord="2">Warning</EnumVal>
+<EnumVal ord="3">Alarm</EnumVal>
+</EnumType>
+<EnumType id="CtlModels">
+<EnumVal ord="0">status-only</EnumVal>
+<EnumVal ord="1">direct-with-normal-security</EnumVal>
+<EnumVal ord="2">sbo-with-normal-security</EnumVal>
+<EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+<EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+</EnumType>
+<EnumType id="ITSIUnit">
+<EnumVal ord="5">A</EnumVal>
+<EnumVal ord="29">V</EnumVal>
+</EnumType>
+</DataTypeTemplates>
+</SCL>

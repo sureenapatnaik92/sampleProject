@@ -1,0 +1,4434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SCL xmlns:ext="http://www.efacec.pt/61850/2007/SCLmaintenance" version="2007" revision="B" xmlns="http://www.iec.ch/61850/2003/SCL">
+	<Private type="EFAAutoOrder" />
+	<Private type="EFAProcessed">SyncModels</Private>
+	<Header id="SCL TF" version="1.8" revision="1" toolID="Automation Studio PREMIUM SUITE 2015 Q4 TP [3.0.634.3] - RELEASE" nameStructure="IEDName">
+		<History>
+			<Hitem version="1.36" revision="1.0" when="Tue, 15 Oct 2013 14:29:13 GMT" who="Automation Studio Designer Edition 2.6.461.5 Rev.5 [2013 Q4 TP] - 8237" what="Export to CID" why="...." />
+			<Hitem version="1.58" revision="1" when="Mon, 14 Sep 2015 16:03:51 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to ICD" why="Generic SCL workflow" />
+			<Hitem version="1.58" revision="2" when="Mon, 14 Sep 2015 16:04:17 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to IID" why="Generic SCL workflow" />
+			<Hitem version="1.58" revision="3" when="Mon, 14 Sep 2015 16:04:36 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to ICD" why="Generic SCL workflow" />
+			<Hitem version="1.0" revision="1" when="Fri, 25 Sep 2015 12:30:35 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to SCD" why="Generic SCL workflow" />
+			<Hitem version="1.0" revision="2" when="Fri, 25 Sep 2015 12:32:08 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to SCD" why="Generic SCL workflow" />
+			<Hitem version="1.0" revision="3" when="Fri, 25 Sep 2015 12:36:43 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Importing SCD" why="Generic SCL workflow" />
+			<Hitem version="1.0" revision="4" when="Fri, 25 Sep 2015 12:59:28 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to SCD" why="Generic SCL workflow" />
+			<Hitem version="1.0" revision="5" when="Fri, 25 Sep 2015 13:00:01 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to SCD" why="Generic SCL workflow" />
+			<Hitem version="1.0" revision="6" when="Fri, 25 Sep 2015 14:51:04 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.2 [2015 Q3] - 8237" what="Export to SCD" why="Generic SCL workflow" />
+			<Hitem version="1.8" revision="1" when="Sun, 27 Sep 2015 13:57:27 GMT" who="Automation Studio PREMIUM SUITE 3.0 Rev.3 [2015 Q4 TP] - 8237" what="Export to IID" why="First IID Export" />
+		</History>
+	</Header>
+	<Communication>
+		<SubNetwork name="SubNet1" type="8-MMS">
+			<ConnectedAP iedName="AA1D1Q01KF1" apName="IPAccessPoint">
+				<Address>
+					<P type="IP">192.168.8.101</P>
+					<P type="IP-GATEWAY">192.168.1.1</P>
+					<P type="OSI-TSEL">0001</P>
+					<P type="OSI-PSEL">00000001</P>
+					<P type="OSI-SSEL">0001</P>
+					<P type="OSI-AP-Title">1,3,9999,23</P>
+					<P type="OSI-AE-Qualifier">23</P>
+				</Address>
+				<GSE ldInst="CTRL" cbName="GSE1">
+					<Address>
+						<P type="MAC-Address">01-0C-CD-01-00-00</P>
+						<P type="APPID">0000</P>
+						<P type="VLAN-PRIORITY">4</P>
+						<P type="VLAN-ID">000</P>
+					</Address>
+					<MinTime unit="s" multiplier="m">10</MinTime>
+					<MaxTime unit="s" multiplier="m">2000</MaxTime>
+				</GSE>
+				<GSE ldInst="CTRL" cbName="GSE2">
+					<Address>
+						<P type="MAC-Address">01-0C-CD-01-00-00</P>
+						<P type="APPID">0000</P>
+						<P type="VLAN-PRIORITY">4</P>
+						<P type="VLAN-ID">000</P>
+					</Address>
+					<MinTime unit="s" multiplier="m">10</MinTime>
+					<MaxTime unit="s" multiplier="m">2000</MaxTime>
+				</GSE>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED desc="TPU220" name="AA1D1Q01KF1" type="Protection" manufacturer="Efacec" configVersion="1.8" originalSclVersion="2007" originalSclRevision="B" owner="SCL TF">
+		<Private type="EFAProcessed">MapInfo</Private>
+		<Private type="EFAProcessed">SAddrNI</Private>
+		<Services>
+			<DynAssociation max="6" />
+			<SettingGroups>
+				<SGEdit />
+			</SettingGroups>
+			<GetDirectory />
+			<GetDataObjectDefinition />
+			<DataObjectDirectory />
+			<GetDataSetValue />
+			<SetDataSetValue />
+			<DataSetDirectory />
+			<ConfDataSet max="128" maxAttributes="128" modify="false" />
+			<ReadWrite />
+			<ConfReportControl max="128" bufMode="both" bufConf="true" />
+			<GetCBValues />
+			<ReportSettings cbName="Conf" datSet="Conf" rptID="Conf" optFields="Dyn" bufTime="Dyn" trgOps="Dyn" intgPd="Dyn" />
+			<GSESettings cbName="Conf" datSet="Conf" appID="Conf" />
+			<GOOSE max="64" />
+			<ConfLNs fixLnInst="true" />
+			<SupSubscription maxGo="64" maxSv="0" />
+		</Services>
+		<AccessPoint name="IPAccessPoint">
+			<Server>
+				<Authentication />
+				<LDevice inst="CTRL">
+					<Private type="EFALDev">705f1a0d-b368-4017-b2ec-7ed3b4032550</Private>
+					<LN0 lnClass="LLN0" lnType="EFA_LLN0" inst="">
+						<Private type="EFA_MapType">EFA_LLN0</Private>
+						<DataSet name="RBRFOpEx">
+							<Private type="EFATool">PREMIUM SUITE</Private>
+							<FCDA ldInst="CTRL" prefix="TPBF1" lnClass="RBRF" lnInst="1" doName="OpEx" daName="general" fc="ST" />
+							<FCDA ldInst="CTRL" prefix="TPBF1" lnClass="RBRF" lnInst="1" doName="OpEx" daName="q" fc="ST" />
+						</DataSet>
+						<DataSet name="CSWIOpOpnCls">
+							<Private type="EFATool">PREMIUM SUITE</Private>
+							<FCDA ldInst="CTRL" prefix="CB1" lnClass="CSWI" lnInst="1" doName="OpOpn" daName="general" fc="ST" />
+							<FCDA ldInst="CTRL" prefix="CB1" lnClass="CSWI" lnInst="1" doName="OpOpn" daName="q" fc="ST" />
+							<FCDA ldInst="CTRL" prefix="CB1" lnClass="CSWI" lnInst="1" doName="OpCls" daName="general" fc="ST" />
+							<FCDA ldInst="CTRL" prefix="CB1" lnClass="CSWI" lnInst="1" doName="OpCls" daName="q" fc="ST" />
+						</DataSet>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2007A</Val>
+							</DAI>
+							<DAI name="d" sAddr="522.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="Loc">
+							<DAI name="stVal" sAddr="518.0" />
+							<DAI name="q" sAddr="518.1" />
+							<DAI name="t" sAddr="518.2" />
+							<DAI name="subEna" sAddr="518" />
+							<DAI name="subVal" sAddr="518" />
+							<DAI name="subQ" sAddr="518" />
+							<DAI name="subID" sAddr="518" />
+							<DAI name="blkEna" sAddr="518" />
+						</DOI>
+						<DOI name="LocSta">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="517.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="517.0" />
+							<DAI name="q" sAddr="517.1" />
+							<DAI name="t" sAddr="517.2" />
+							<DAI name="stSeld" sAddr="517.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="517.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="517.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="517.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="517.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="517.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="517.9" />
+							<DAI name="sboClass" sAddr="517.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="517.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="517.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="517.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="517.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="517" />
+							<DAI name="subVal" sAddr="517" />
+							<DAI name="subQ" sAddr="517" />
+							<DAI name="subID" sAddr="517" />
+							<DAI name="blkEna" sAddr="517" />
+						</DOI>
+						<GSEControl name="GSE1" datSet="RBRFOpEx" confRev="3" appID="GSE1">
+							<Private type="EFATool">PREMIUM SUITE</Private>
+						</GSEControl>
+						<GSEControl name="GSE2" datSet="CSWIOpOpnCls" confRev="4" appID="GSE2">
+							<Private type="EFATool">PREMIUM SUITE</Private>
+						</GSEControl>
+						<SettingControl numOfSGs="4" />
+					</LN0>
+					<LN lnClass="LPHD" lnType="EFA_LPHD" inst="1">
+						<Private type="EFA_MapType">EFA_LPHD</Private>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="InOv">
+							<DAI name="stVal" sAddr="556.0" />
+							<DAI name="q" sAddr="556.1" />
+							<DAI name="t" sAddr="556.2" />
+							<DAI name="subEna" sAddr="556" />
+							<DAI name="subVal" sAddr="556" />
+							<DAI name="subQ" sAddr="556" />
+							<DAI name="subID" sAddr="556" />
+							<DAI name="blkEna" sAddr="556" />
+						</DOI>
+						<DOI name="NumPwrUp">
+							<DAI name="stVal" sAddr="38.0" />
+							<DAI name="q" sAddr="38.1" />
+							<DAI name="t" sAddr="38.2" />
+							<DAI name="subEna" sAddr="38" />
+							<DAI name="subVal" sAddr="38" />
+							<DAI name="subQ" sAddr="38" />
+							<DAI name="subID" sAddr="38" />
+							<DAI name="blkEna" sAddr="38" />
+						</DOI>
+						<DOI name="OutOv">
+							<DAI name="stVal" sAddr="557.0" />
+							<DAI name="q" sAddr="557.1" />
+							<DAI name="t" sAddr="557.2" />
+							<DAI name="subEna" sAddr="557" />
+							<DAI name="subVal" sAddr="557" />
+							<DAI name="subQ" sAddr="557" />
+							<DAI name="subID" sAddr="557" />
+							<DAI name="blkEna" sAddr="557" />
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI name="stVal" sAddr="39.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="39.1" />
+							<DAI name="t" sAddr="39.2" />
+							<DAI name="subEna" sAddr="39" />
+							<DAI name="subVal" sAddr="39" />
+							<DAI name="subQ" sAddr="39" />
+							<DAI name="subID" sAddr="39" />
+						</DOI>
+						<DOI name="PhyNam">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="hwRev" sAddr="48.0" />
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="serNum" sAddr="49.0" />
+							<DAI name="model" sAddr="50.0">
+								<Val>TPU S220 S 1 2 C C 1 X 1 1A 1S 2 2 CX</Val>
+							</DAI>
+							<DAI name="location" sAddr="43.0">
+								<Val>PreTests/EFACONF</Val>
+							</DAI>
+							<DAI name="owner" sAddr="42.0">
+								<Val>Utility</Val>
+							</DAI>
+							<DAI name="ePSName" sAddr="41.0">
+								<Val>Bay</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI name="stVal" sAddr="559.0" />
+							<DAI name="q" sAddr="559.1" />
+							<DAI name="t" sAddr="559.2" />
+							<DAI name="subEna" sAddr="559" />
+							<DAI name="subVal" sAddr="559" />
+							<DAI name="subQ" sAddr="559" />
+							<DAI name="subID" sAddr="559" />
+							<DAI name="blkEna" sAddr="559" />
+						</DOI>
+						<DOI name="RsStat">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="36.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="36.0" />
+							<DAI name="q" sAddr="36.1" />
+							<DAI name="t" sAddr="36.2" />
+							<DAI name="stSeld" sAddr="36.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="36.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="36.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="36.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="36.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="36.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="36.9" />
+							<DAI name="sboClass" sAddr="36.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="36.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="36.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="36.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="36.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="36" />
+							<DAI name="subVal" sAddr="36" />
+							<DAI name="subQ" sAddr="36" />
+							<DAI name="subID" sAddr="36" />
+							<DAI name="blkEna" sAddr="36" />
+						</DOI>
+						<DOI name="WrmStr">
+							<DAI name="stVal" sAddr="37.0" />
+							<DAI name="q" sAddr="37.1" />
+							<DAI name="t" sAddr="37.2" />
+							<DAI name="subEna" sAddr="37" />
+							<DAI name="subVal" sAddr="37" />
+							<DAI name="subQ" sAddr="37" />
+							<DAI name="subID" sAddr="37" />
+							<DAI name="blkEna" sAddr="37" />
+						</DOI>
+						<DOI name="OpTmh">
+							<DAI name="stVal" sAddr="35.0" />
+							<DAI name="q" sAddr="35.1" />
+							<DAI name="t" sAddr="35.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="35" />
+							<DAI name="subVal" sAddr="35" />
+							<DAI name="subQ" sAddr="35" />
+							<DAI name="subID" sAddr="35" />
+							<DAI name="blkEna" sAddr="35" />
+						</DOI>
+					</LN>
+					<LN lnClass="CSWI" lnType="CBCSWI1" inst="1" prefix="CB1">
+						<Private type="EFAFunction">1a7a3162-1e99-4a97-9dd7-83ed0e9bec30</Private>
+						<Private type="EFAFunctionName">CBCtrl1</Private>
+						<Private type="EFA_MapType">CBCSWI</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="2612.0" />
+							<DAI name="d" sAddr="2611.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2609.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2609.1" />
+							<DAI name="t" sAddr="2609.2" />
+							<DAI name="subEna" sAddr="2609" />
+							<DAI name="subVal" sAddr="2609" />
+							<DAI name="subQ" sAddr="2609" />
+							<DAI name="subID" sAddr="2609" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="OpCls">
+							<DAI name="general" sAddr="2606.0" />
+							<DAI name="q" sAddr="2606.1" />
+							<DAI name="t" sAddr="2606.2" />
+							<SDI name="originSrc">
+								<DAI name="orCat" sAddr="2606.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="OpCntRs">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2603.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2603.0" />
+							<DAI name="q" sAddr="2603.1" />
+							<DAI name="t" sAddr="2603.2" />
+							<DAI name="stSeld" sAddr="2603.15" />
+							<DAI name="ctlModel" sAddr="2603.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2603.9" />
+							<DAI name="sboClass" sAddr="2603.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="minVal" sAddr="2603.11">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="maxVal" sAddr="2603.12">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="stepSize" sAddr="2603.13">
+								<Val>1</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2603.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2603.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2603.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2603.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2603" />
+							<DAI name="subVal" sAddr="2603" />
+							<DAI name="subQ" sAddr="2603" />
+							<DAI name="subID" sAddr="2603" />
+							<DAI name="blkEna" sAddr="2603" />
+						</DOI>
+						<DOI name="OpOpn">
+							<DAI name="general" sAddr="2607.0" />
+							<DAI name="q" sAddr="2607.1" />
+							<DAI name="t" sAddr="2607.2" />
+							<SDI name="originSrc">
+								<DAI name="orCat" sAddr="2607.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="Pos">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2608.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2608.0" />
+							<DAI name="q" sAddr="2608.1" />
+							<DAI name="t" sAddr="2608.2" />
+							<DAI name="stSeld" sAddr="2608.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="2608.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="2608.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="2608.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="2608.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="2608.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2608.9">
+								<Val>5000</Val>
+							</DAI>
+							<DAI name="sboClass" sAddr="2608.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2608.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2608.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2608.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2608" />
+							<DAI name="subVal" sAddr="2608" />
+							<DAI name="subQ" sAddr="2608" />
+							<DAI name="subID" sAddr="2608" />
+							<DAI name="blkEna" sAddr="2608" />
+						</DOI>
+						<DOI name="OpDls">
+							<DAI name="stVal" sAddr="3160.0" />
+							<DAI name="q" sAddr="3160.1" />
+							<DAI name="t" sAddr="3160.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="3160" />
+							<DAI name="subVal" sAddr="3160" />
+							<DAI name="subQ" sAddr="3160" />
+							<DAI name="subID" sAddr="3160" />
+							<DAI name="blkEna" sAddr="3160" />
+						</DOI>
+						<DOI name="SynPrg">
+							<DAI name="stVal" sAddr="2605.0" />
+							<DAI name="q" sAddr="2605.1" />
+							<DAI name="t" sAddr="2605.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2605" />
+							<DAI name="subVal" sAddr="2605" />
+							<DAI name="subQ" sAddr="2605" />
+							<DAI name="subID" sAddr="2605" />
+							<DAI name="blkEna" sAddr="2605" />
+						</DOI>
+						<DOI name="SynFail">
+							<DAI name="stVal" sAddr="2604.0" />
+							<DAI name="q" sAddr="2604.1" />
+							<DAI name="t" sAddr="2604.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2604" />
+							<DAI name="subVal" sAddr="2604" />
+							<DAI name="subQ" sAddr="2604" />
+							<DAI name="subID" sAddr="2604" />
+							<DAI name="blkEna" sAddr="2604" />
+						</DOI>
+						<DOI name="Byp">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3158.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="3158.0" />
+							<DAI name="q" sAddr="3158.1" />
+							<DAI name="t" sAddr="3158.2" />
+							<DAI name="stSeld" sAddr="3158.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3158.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3158.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3158.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3158.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3158.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3158.9" />
+							<DAI name="sboClass" sAddr="3158.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="3158.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3158.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3158.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="3158.6" />
+							</SDI>
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="3158" />
+							<DAI name="subVal" sAddr="3158" />
+							<DAI name="subQ" sAddr="3158" />
+							<DAI name="subID" sAddr="3158" />
+							<DAI name="blkEna" sAddr="3158" />
+						</DOI>
+						<Inputs>
+							<ExtRef desc="Position 'Circuit breaker position' - CTRL.CBCtrl1.Position [DPS]" intAddr="5170" serviceType="GOOSE" />
+						</Inputs>
+					</LN>
+					<LN lnClass="RBRF" lnType="TPBFRBRF3" inst="1" prefix="TPBF1">
+						<Private type="EFAFunction">94a5a755-29c2-4c75-8f89-98fecbbc6a3a</Private>
+						<Private type="EFAFunctionName">CBFail3Ph1</Private>
+						<Private type="EFA_MapType">TPBFRBRF</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="2660.0" />
+							<DAI name="d" sAddr="2659.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2657.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2657.1" />
+							<DAI name="t" sAddr="2657.2" />
+							<DAI name="subEna" sAddr="2657" />
+							<DAI name="subVal" sAddr="2657" />
+							<DAI name="subQ" sAddr="2657" />
+							<DAI name="subID" sAddr="2657" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2656.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2656.1" />
+							<DAI name="t" sAddr="2656.2" />
+							<DAI name="subEna" sAddr="2656" />
+							<DAI name="subVal" sAddr="2656" />
+							<DAI name="subQ" sAddr="2656" />
+							<DAI name="subID" sAddr="2656" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="Blk">
+							<DAI name="stVal" sAddr="2655.0" />
+							<DAI name="q" sAddr="2655.1" />
+							<DAI name="t" sAddr="2655.2" />
+							<DAI name="subEna" sAddr="2655" />
+							<DAI name="subVal" sAddr="2655" />
+							<DAI name="subQ" sAddr="2655" />
+							<DAI name="subID" sAddr="2655" />
+							<DAI name="blkEna" sAddr="2655" />
+						</DOI>
+						<DOI name="DetValA">
+							<SDI name="setMag">
+								<DAI name="f" sAddr="2645.0" />
+							</SDI>
+							<SDI name="units">
+								<DAI name="SIUnit" sAddr="2645.5" />
+								<DAI name="multiplier" sAddr="2645.6" />
+							</SDI>
+							<SDI name="minVal">
+								<DAI name="f" sAddr="2645.2" />
+							</SDI>
+							<SDI name="maxVal">
+								<DAI name="f" sAddr="2645.3" />
+							</SDI>
+							<SDI name="stepSize">
+								<DAI name="f" sAddr="2645.4" />
+							</SDI>
+						</DOI>
+						<DOI name="FailTmms">
+							<Private type="EFADOName_DOI">St2TPTripDelay</Private>
+							<DAI name="setVal" sAddr="2647.0">
+								<Val sGroup="1">10000</Val>
+								<Val sGroup="2">150</Val>
+								<Val sGroup="3">150</Val>
+								<Val sGroup="4">150</Val>
+							</DAI>
+							<DAI name="minVal" sAddr="2647.2">
+								<Val>50</Val>
+							</DAI>
+							<DAI name="maxVal" sAddr="2647.3">
+								<Val>30000</Val>
+							</DAI>
+							<DAI name="stepSize" sAddr="2647.4">
+								<Val>1</Val>
+							</DAI>
+							<SDI name="units">
+								<DAI name="SIUnit" sAddr="2647.5">
+									<Val>s</Val>
+								</DAI>
+								<DAI name="multiplier" sAddr="2647.6">
+									<Val>m</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="OpEx">
+							<DAI name="general" sAddr="2652.0" />
+							<DAI name="q" sAddr="2652.1" />
+							<DAI name="t" sAddr="2652.2" />
+							<SDI name="originSrc">
+								<DAI name="orCat" sAddr="2652.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="OpIn">
+							<DAI name="general" sAddr="2653.0" />
+							<DAI name="q" sAddr="2653.1" />
+							<DAI name="t" sAddr="2653.2" />
+							<SDI name="originSrc">
+								<DAI name="orCat" sAddr="2653.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general" sAddr="2654.0" />
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+							<DAI name="q" sAddr="2654.1" />
+							<DAI name="t" sAddr="2654.2" />
+						</DOI>
+						<DOI name="TPTrTmms">
+							<Private type="EFADOName_DOI">St1TPTripDelay</Private>
+							<DAI name="setVal" sAddr="2648.0">
+								<Val sGroup="1">0</Val>
+								<Val sGroup="2">0</Val>
+								<Val sGroup="3">0</Val>
+								<Val sGroup="4">0</Val>
+							</DAI>
+							<DAI name="minVal" sAddr="2648.2">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="maxVal" sAddr="2648.3">
+								<Val>30000</Val>
+							</DAI>
+							<DAI name="stepSize" sAddr="2648.4">
+								<Val>1</Val>
+							</DAI>
+							<SDI name="units">
+								<DAI name="SIUnit" sAddr="2648.5">
+									<Val>s</Val>
+								</DAI>
+								<DAI name="multiplier" sAddr="2648.6">
+									<Val>m</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+						<DOI name="CBFltOp">
+							<DAI name="stVal" sAddr="2651.0" />
+							<DAI name="q" sAddr="2651.1" />
+							<DAI name="t" sAddr="2651.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2651" />
+							<DAI name="subVal" sAddr="2651" />
+							<DAI name="subQ" sAddr="2651" />
+							<DAI name="subID" sAddr="2651" />
+							<DAI name="blkEna" sAddr="2651" />
+						</DOI>
+						<Inputs>
+							<ExtRef desc="Function Trip 'Protection trip' - CTRL.CBFail3Ph1.FuncTrip [SPS]" intAddr="5171" serviceType="GOOSE" />
+						</Inputs>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH15" inst="1">
+						<Private type="EFA_Alarms">fbdbfc59-c703-4c5f-9468-821e84fcbba2</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="lnNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="minVal" sAddr="521.11" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="581.0" />
+							<DAI name="q" sAddr="581.1" />
+							<DAI name="t" sAddr="581.2" />
+							<DAI name="subEna" sAddr="581" />
+							<DAI name="subVal" sAddr="581" />
+							<DAI name="subQ" sAddr="581" />
+							<DAI name="subID" sAddr="581" />
+						</DOI>
+						<DOI name="Alm1">
+							<DAI name="stVal" sAddr="2608.0" />
+							<DAI name="q" sAddr="2608.1" />
+							<DAI name="t" sAddr="2608.2" />
+							<DAI name="stSeld" sAddr="2608.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2608.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="2608.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="2608.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="2608.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="2608.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="2608.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2608.9">
+								<Val>5000</Val>
+							</DAI>
+							<DAI name="sboClass" sAddr="2608.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2608.8" />
+							<SDI name="SBOw">
+								<DAI name="ctlVal" sAddr="2608.17" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.18" />
+								</SDI>
+							</SDI>
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2608.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.5" />
+								</SDI>
+								<DAI name="Test" sAddr="2608.6" />
+							</SDI>
+							<SDI name="Cancel">
+								<DAI name="ctlVal" sAddr="2608.19" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.20" />
+								</SDI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>Automation Studio:2010</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2608" />
+							<DAI name="subVal" sAddr="2608" />
+							<DAI name="subQ" sAddr="2608" />
+							<DAI name="subID" sAddr="2608" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH13" inst="2" prefix="">
+						<Private type="EFA_Alarms">35c1bd71-3eff-4bac-a694-d82537af4136</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="lnNs">
+								<Val>IEC 61850-7-4:2003</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="minVal" sAddr="521.11" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="580.0" />
+							<DAI name="q" sAddr="580.1" />
+							<DAI name="t" sAddr="580.2" />
+							<DAI name="subEna" sAddr="580" />
+							<DAI name="subVal" sAddr="580" />
+							<DAI name="subQ" sAddr="580" />
+							<DAI name="subID" sAddr="580" />
+						</DOI>
+						<DOI name="Alm1">
+							<DAI name="stVal" sAddr="2608.0" />
+							<DAI name="q" sAddr="2608.1" />
+							<DAI name="t" sAddr="2608.2" />
+							<DAI name="stSeld" sAddr="2608.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2608.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="2608.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="2608.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="2608.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="2608.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="2608.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2608.9">
+								<Val>5000</Val>
+							</DAI>
+							<DAI name="sboClass" sAddr="2608.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2608.8" />
+							<SDI name="SBOw">
+								<DAI name="ctlVal" sAddr="2608.17" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.18" />
+								</SDI>
+							</SDI>
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2608.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.5" />
+								</SDI>
+								<DAI name="Test" sAddr="2608.6" />
+							</SDI>
+							<SDI name="Cancel">
+								<DAI name="ctlVal" sAddr="2608.19" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2608.20" />
+								</SDI>
+							</SDI>
+							<DAI name="dataNs">
+								<Val>Automation Studio:2010</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2608" />
+							<DAI name="subVal" sAddr="2608" />
+							<DAI name="subQ" sAddr="2608" />
+							<DAI name="subID" sAddr="2608" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH2" inst="3" prefix="">
+						<Private type="EFA_Alarms">800244e8-9ecb-4d6d-83a5-8985c0f38991</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="579.0" />
+							<DAI name="q" sAddr="579.1" />
+							<DAI name="t" sAddr="579.2" />
+							<DAI name="subEna" sAddr="579" />
+							<DAI name="subVal" sAddr="579" />
+							<DAI name="subQ" sAddr="579" />
+							<DAI name="subID" sAddr="579" />
+							<DAI name="blkEna" sAddr="579" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH3" inst="4" prefix="">
+						<Private type="EFA_Alarms">aa9ac442-0571-4632-b318-fc1514467123</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="578.0" />
+							<DAI name="q" sAddr="578.1" />
+							<DAI name="t" sAddr="578.2" />
+							<DAI name="subEna" sAddr="578" />
+							<DAI name="subVal" sAddr="578" />
+							<DAI name="subQ" sAddr="578" />
+							<DAI name="subID" sAddr="578" />
+							<DAI name="blkEna" sAddr="578" />
+						</DOI>
+						<DOI name="Alm1">
+							<DAI name="stVal" sAddr="2654.0" />
+							<DAI name="q" sAddr="2654.1" />
+							<DAI name="t" sAddr="2654.2" />
+							<DAI name="dataNs">
+								<Val>Automation Studio:2010</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2654" />
+							<DAI name="subVal" sAddr="2654" />
+							<DAI name="subQ" sAddr="2654" />
+							<DAI name="subID" sAddr="2654" />
+							<DAI name="blkEna" sAddr="2654" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH4" inst="5" prefix="">
+						<Private type="EFA_Alarms">d5462e54-f800-47cd-bdda-cdd6b4c50127</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="577.0" />
+							<DAI name="q" sAddr="577.1" />
+							<DAI name="t" sAddr="577.2" />
+							<DAI name="subEna" sAddr="577" />
+							<DAI name="subVal" sAddr="577" />
+							<DAI name="subQ" sAddr="577" />
+							<DAI name="subID" sAddr="577" />
+							<DAI name="blkEna" sAddr="577" />
+						</DOI>
+						<DOI name="Alm1">
+							<DAI name="stVal" sAddr="2652.0" />
+							<DAI name="q" sAddr="2652.1" />
+							<DAI name="t" sAddr="2652.2" />
+							<DAI name="dataNs">
+								<Val>Automation Studio:2010</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="2652" />
+							<DAI name="subVal" sAddr="2652" />
+							<DAI name="subQ" sAddr="2652" />
+							<DAI name="subID" sAddr="2652" />
+							<DAI name="blkEna" sAddr="2652" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH5" inst="6" prefix="">
+						<Private type="EFA_Alarms">bf2d32ea-1865-47f3-a71c-244653cc3538</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="576.0" />
+							<DAI name="q" sAddr="576.1" />
+							<DAI name="t" sAddr="576.2" />
+							<DAI name="subEna" sAddr="576" />
+							<DAI name="subVal" sAddr="576" />
+							<DAI name="subQ" sAddr="576" />
+							<DAI name="subID" sAddr="576" />
+							<DAI name="blkEna" sAddr="576" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH6" inst="7" prefix="">
+						<Private type="EFA_Alarms">8f5a481c-979d-4da4-b82e-28e2e9fd9209</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="575.0" />
+							<DAI name="q" sAddr="575.1" />
+							<DAI name="t" sAddr="575.2" />
+							<DAI name="subEna" sAddr="575" />
+							<DAI name="subVal" sAddr="575" />
+							<DAI name="subQ" sAddr="575" />
+							<DAI name="subID" sAddr="575" />
+							<DAI name="blkEna" sAddr="575" />
+						</DOI>
+					</LN>
+					<LN lnClass="CALH" lnType="EFA_CALH7" inst="8" prefix="">
+						<Private type="EFA_Alarms">05168cd3-0e90-42f0-9b65-d87a6ab1600d</Private>
+						<Private type="EFA_MapType">EFA_CALH</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="520.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="520.1" />
+							<DAI name="t" sAddr="520.2" />
+							<DAI name="subEna" sAddr="520" />
+							<DAI name="subVal" sAddr="520" />
+							<DAI name="subQ" sAddr="520" />
+							<DAI name="subID" sAddr="520" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="519.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="519.1" />
+							<DAI name="t" sAddr="519.2" />
+							<DAI name="subEna" sAddr="519" />
+							<DAI name="subVal" sAddr="519" />
+							<DAI name="subQ" sAddr="519" />
+							<DAI name="subID" sAddr="519" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="521.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="521.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="521.1" />
+							<DAI name="t" sAddr="521.2" />
+							<DAI name="stSeld" sAddr="521.15" />
+							<DAI name="ctlModel" sAddr="521.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="521.9" />
+							<DAI name="sboClass" sAddr="521.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="521.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="521.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="521.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="521.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="521" />
+							<DAI name="subVal" sAddr="521" />
+							<DAI name="subQ" sAddr="521" />
+							<DAI name="subID" sAddr="521" />
+						</DOI>
+						<DOI name="GrAlm">
+							<DAI name="stVal" sAddr="574.0" />
+							<DAI name="q" sAddr="574.1" />
+							<DAI name="t" sAddr="574.2" />
+							<DAI name="subEna" sAddr="574" />
+							<DAI name="subVal" sAddr="574" />
+							<DAI name="subQ" sAddr="574" />
+							<DAI name="subID" sAddr="574" />
+							<DAI name="blkEna" sAddr="574" />
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice inst="IO">
+					<Private type="EFALDev">f80731bb-0c8f-4109-aea5-1da4ff402655</Private>
+					<LN0 lnClass="LLN0" lnType="EFA_LLN0" inst="">
+						<Private type="EFA_MapType">EFA_LLN0</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2007A</Val>
+							</DAI>
+							<DAI name="d" sAddr="2844.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2845.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2845.1" />
+							<DAI name="t" sAddr="2845.2" />
+							<DAI name="subEna" sAddr="2845" />
+							<DAI name="subVal" sAddr="2845" />
+							<DAI name="subQ" sAddr="2845" />
+							<DAI name="subID" sAddr="2845" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2842.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2842.1" />
+							<DAI name="t" sAddr="2842.2" />
+							<DAI name="subEna" sAddr="2842" />
+							<DAI name="subVal" sAddr="2842" />
+							<DAI name="subQ" sAddr="2842" />
+							<DAI name="subID" sAddr="2842" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2843.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2843.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2843.1" />
+							<DAI name="t" sAddr="2843.2" />
+							<DAI name="stSeld" sAddr="2843.15" />
+							<DAI name="ctlModel" sAddr="2843.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2843.9" />
+							<DAI name="sboClass" sAddr="2843.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2843.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2843.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2843.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2843.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2843" />
+							<DAI name="subVal" sAddr="2843" />
+							<DAI name="subQ" sAddr="2843" />
+							<DAI name="subID" sAddr="2843" />
+						</DOI>
+						<DOI name="Loc">
+							<DAI name="stVal" sAddr="2841.0" />
+							<DAI name="q" sAddr="2841.1" />
+							<DAI name="t" sAddr="2841.2" />
+							<DAI name="subEna" sAddr="2841" />
+							<DAI name="subVal" sAddr="2841" />
+							<DAI name="subQ" sAddr="2841" />
+							<DAI name="subID" sAddr="2841" />
+							<DAI name="blkEna" sAddr="2841" />
+						</DOI>
+						<DOI name="LocSta">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2840.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2840.0" />
+							<DAI name="q" sAddr="2840.1" />
+							<DAI name="t" sAddr="2840.2" />
+							<DAI name="stSeld" sAddr="2840.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="2840.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="2840.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="2840.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="2840.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="2840.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2840.9" />
+							<DAI name="sboClass" sAddr="2840.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2840.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2840.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2840.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2840.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2840" />
+							<DAI name="subVal" sAddr="2840" />
+							<DAI name="subQ" sAddr="2840" />
+							<DAI name="subID" sAddr="2840" />
+							<DAI name="blkEna" sAddr="2840" />
+						</DOI>
+						<SettingControl numOfSGs="4" />
+					</LN0>
+					<LN lnClass="LPHD" lnType="EFA_LPHD" inst="1">
+						<Private type="EFA_MapType">EFA_LPHD</Private>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2845.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2845.1" />
+							<DAI name="t" sAddr="2845.2" />
+							<DAI name="subEna" sAddr="2845" />
+							<DAI name="subVal" sAddr="2845" />
+							<DAI name="subQ" sAddr="2845" />
+							<DAI name="subID" sAddr="2845" />
+						</DOI>
+						<DOI name="InOv">
+							<DAI name="stVal" sAddr="556.0" />
+							<DAI name="q" sAddr="556.1" />
+							<DAI name="t" sAddr="556.2" />
+							<DAI name="subEna" sAddr="556" />
+							<DAI name="subVal" sAddr="556" />
+							<DAI name="subQ" sAddr="556" />
+							<DAI name="subID" sAddr="556" />
+							<DAI name="blkEna" sAddr="556" />
+						</DOI>
+						<DOI name="NumPwrUp">
+							<DAI name="stVal" sAddr="38.0" />
+							<DAI name="q" sAddr="38.1" />
+							<DAI name="t" sAddr="38.2" />
+							<DAI name="subEna" sAddr="38" />
+							<DAI name="subVal" sAddr="38" />
+							<DAI name="subQ" sAddr="38" />
+							<DAI name="subID" sAddr="38" />
+							<DAI name="blkEna" sAddr="38" />
+						</DOI>
+						<DOI name="OutOv">
+							<DAI name="stVal" sAddr="557.0" />
+							<DAI name="q" sAddr="557.1" />
+							<DAI name="t" sAddr="557.2" />
+							<DAI name="subEna" sAddr="557" />
+							<DAI name="subVal" sAddr="557" />
+							<DAI name="subQ" sAddr="557" />
+							<DAI name="subID" sAddr="557" />
+							<DAI name="blkEna" sAddr="557" />
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI name="stVal" sAddr="39.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="39.1" />
+							<DAI name="t" sAddr="39.2" />
+							<DAI name="subEna" sAddr="39" />
+							<DAI name="subVal" sAddr="39" />
+							<DAI name="subQ" sAddr="39" />
+							<DAI name="subID" sAddr="39" />
+						</DOI>
+						<DOI name="PhyNam">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="hwRev" sAddr="48.0" />
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="serNum" sAddr="49.0" />
+							<DAI name="model" sAddr="50.0">
+								<Val>TPU S220 S 1 2 C C 1 X 1 1A 1S 2 2 CX</Val>
+							</DAI>
+							<DAI name="location" sAddr="43.0">
+								<Val>PreTests/EFACONF</Val>
+							</DAI>
+							<DAI name="owner" sAddr="42.0">
+								<Val>Utility</Val>
+							</DAI>
+							<DAI name="ePSName" sAddr="41.0">
+								<Val>Bay</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI name="stVal" sAddr="559.0" />
+							<DAI name="q" sAddr="559.1" />
+							<DAI name="t" sAddr="559.2" />
+							<DAI name="subEna" sAddr="559" />
+							<DAI name="subVal" sAddr="559" />
+							<DAI name="subQ" sAddr="559" />
+							<DAI name="subID" sAddr="559" />
+							<DAI name="blkEna" sAddr="559" />
+						</DOI>
+						<DOI name="RsStat">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="36.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="36.0" />
+							<DAI name="q" sAddr="36.1" />
+							<DAI name="t" sAddr="36.2" />
+							<DAI name="stSeld" sAddr="36.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="36.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="36.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="36.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="36.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="36.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="36.9" />
+							<DAI name="sboClass" sAddr="36.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="36.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="36.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="36.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="36.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="36" />
+							<DAI name="subVal" sAddr="36" />
+							<DAI name="subQ" sAddr="36" />
+							<DAI name="subID" sAddr="36" />
+							<DAI name="blkEna" sAddr="36" />
+						</DOI>
+						<DOI name="WrmStr">
+							<DAI name="stVal" sAddr="37.0" />
+							<DAI name="q" sAddr="37.1" />
+							<DAI name="t" sAddr="37.2" />
+							<DAI name="subEna" sAddr="37" />
+							<DAI name="subVal" sAddr="37" />
+							<DAI name="subQ" sAddr="37" />
+							<DAI name="subID" sAddr="37" />
+							<DAI name="blkEna" sAddr="37" />
+						</DOI>
+						<DOI name="OpTmh">
+							<DAI name="stVal" sAddr="35.0" />
+							<DAI name="q" sAddr="35.1" />
+							<DAI name="t" sAddr="35.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="35" />
+							<DAI name="subVal" sAddr="35" />
+							<DAI name="subQ" sAddr="35" />
+							<DAI name="subID" sAddr="35" />
+							<DAI name="blkEna" sAddr="35" />
+						</DOI>
+					</LN>
+					<LN lnClass="GGIO" lnType="EFA_GGIO7" inst="1" prefix="SL0">
+						<Private type="EFAFunction">a4b75741-e781-4512-9c0c-b93aacb7471d</Private>
+						<Private type="EFAFunctionName">SL0</Private>
+						<Private type="EFA_MapType">EFA_GGIO</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2845.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2845.1" />
+							<DAI name="t" sAddr="2845.2" />
+							<DAI name="subEna" sAddr="2845" />
+							<DAI name="subVal" sAddr="2845" />
+							<DAI name="subQ" sAddr="2845" />
+							<DAI name="subID" sAddr="2845" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2842.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2842.1" />
+							<DAI name="t" sAddr="2842.2" />
+							<DAI name="subEna" sAddr="2842" />
+							<DAI name="subVal" sAddr="2842" />
+							<DAI name="subQ" sAddr="2842" />
+							<DAI name="subID" sAddr="2842" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2843.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2843.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2843.1" />
+							<DAI name="t" sAddr="2843.2" />
+							<DAI name="stSeld" sAddr="2843.15" />
+							<DAI name="ctlModel" sAddr="2843.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2843.9" />
+							<DAI name="sboClass" sAddr="2843.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2843.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2843.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2843.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2843.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2843" />
+							<DAI name="subVal" sAddr="2843" />
+							<DAI name="subQ" sAddr="2843" />
+							<DAI name="subID" sAddr="2843" />
+						</DOI>
+						<DOI name="Ind01">
+							<Private type="EFADOName_DOI">IN1</Private>
+							<DAI name="stVal" sAddr="3074.0" />
+							<DAI name="q" sAddr="3074.1" />
+							<DAI name="t" sAddr="3074.2" />
+							<DAI name="subEna" sAddr="3074" />
+							<DAI name="subVal" sAddr="3074" />
+							<DAI name="subQ" sAddr="3074" />
+							<DAI name="subID" sAddr="3074" />
+							<DAI name="blkEna" sAddr="3074" />
+						</DOI>
+						<DOI name="Ind02">
+							<Private type="EFADOName_DOI">IN2</Private>
+							<DAI name="stVal" sAddr="3075.0" />
+							<DAI name="q" sAddr="3075.1" />
+							<DAI name="t" sAddr="3075.2" />
+							<DAI name="subEna" sAddr="3075" />
+							<DAI name="subVal" sAddr="3075" />
+							<DAI name="subQ" sAddr="3075" />
+							<DAI name="subID" sAddr="3075" />
+							<DAI name="blkEna" sAddr="3075" />
+						</DOI>
+						<DOI name="Ind03">
+							<Private type="EFADOName_DOI">IN3</Private>
+							<DAI name="stVal" sAddr="3076.0" />
+							<DAI name="q" sAddr="3076.1" />
+							<DAI name="t" sAddr="3076.2" />
+							<DAI name="subEna" sAddr="3076" />
+							<DAI name="subVal" sAddr="3076" />
+							<DAI name="subQ" sAddr="3076" />
+							<DAI name="subID" sAddr="3076" />
+							<DAI name="blkEna" sAddr="3076" />
+						</DOI>
+						<DOI name="Ind04">
+							<Private type="EFADOName_DOI">IN4</Private>
+							<DAI name="stVal" sAddr="3077.0" />
+							<DAI name="q" sAddr="3077.1" />
+							<DAI name="t" sAddr="3077.2" />
+							<DAI name="subEna" sAddr="3077" />
+							<DAI name="subVal" sAddr="3077" />
+							<DAI name="subQ" sAddr="3077" />
+							<DAI name="subID" sAddr="3077" />
+							<DAI name="blkEna" sAddr="3077" />
+						</DOI>
+						<DOI name="Ind05">
+							<Private type="EFADOName_DOI">IN5</Private>
+							<DAI name="stVal" sAddr="3078.0" />
+							<DAI name="q" sAddr="3078.1" />
+							<DAI name="t" sAddr="3078.2" />
+							<DAI name="subEna" sAddr="3078" />
+							<DAI name="subVal" sAddr="3078" />
+							<DAI name="subQ" sAddr="3078" />
+							<DAI name="subID" sAddr="3078" />
+							<DAI name="blkEna" sAddr="3078" />
+						</DOI>
+						<DOI name="Ind06">
+							<Private type="EFADOName_DOI">IN6</Private>
+							<DAI name="stVal" sAddr="3079.0" />
+							<DAI name="q" sAddr="3079.1" />
+							<DAI name="t" sAddr="3079.2" />
+							<DAI name="subEna" sAddr="3079" />
+							<DAI name="subVal" sAddr="3079" />
+							<DAI name="subQ" sAddr="3079" />
+							<DAI name="subID" sAddr="3079" />
+							<DAI name="blkEna" sAddr="3079" />
+						</DOI>
+						<DOI name="Ind07">
+							<Private type="EFADOName_DOI">IN7</Private>
+							<DAI name="stVal" sAddr="3080.0" />
+							<DAI name="q" sAddr="3080.1" />
+							<DAI name="t" sAddr="3080.2" />
+							<DAI name="subEna" sAddr="3080" />
+							<DAI name="subVal" sAddr="3080" />
+							<DAI name="subQ" sAddr="3080" />
+							<DAI name="subID" sAddr="3080" />
+							<DAI name="blkEna" sAddr="3080" />
+						</DOI>
+						<DOI name="Ind08">
+							<Private type="EFADOName_DOI">IN8</Private>
+							<DAI name="stVal" sAddr="3081.0" />
+							<DAI name="q" sAddr="3081.1" />
+							<DAI name="t" sAddr="3081.2" />
+							<DAI name="subEna" sAddr="3081" />
+							<DAI name="subVal" sAddr="3081" />
+							<DAI name="subQ" sAddr="3081" />
+							<DAI name="subID" sAddr="3081" />
+							<DAI name="blkEna" sAddr="3081" />
+						</DOI>
+						<DOI name="SPCSO01">
+							<Private type="EFADOName_DOI">Reset</Private>
+							<DAI name="stVal" sAddr="3082.0" />
+							<DAI name="q" sAddr="3082.1" />
+							<DAI name="t" sAddr="3082.2" />
+							<DAI name="stSeld" sAddr="3082.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3082.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3082.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3082.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3082.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3082.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3082.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3082.9" />
+							<DAI name="sboClass" sAddr="3082.10" />
+							<DAI name="operTimeout" sAddr="3082.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3082.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3082.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3082.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3082" />
+							<DAI name="subVal" sAddr="3082" />
+							<DAI name="subQ" sAddr="3082" />
+							<DAI name="subID" sAddr="3082" />
+							<DAI name="blkEna" sAddr="3082" />
+						</DOI>
+						<DOI name="SPCSO02">
+							<Private type="EFADOName_DOI">Out1</Private>
+							<DAI name="stVal" sAddr="3083.0" />
+							<DAI name="q" sAddr="3083.1" />
+							<DAI name="t" sAddr="3083.2" />
+							<DAI name="stSeld" sAddr="3083.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3083.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3083.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3083.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3083.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3083.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3083.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3083.9" />
+							<DAI name="sboClass" sAddr="3083.10" />
+							<DAI name="operTimeout" sAddr="3083.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3083.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3083.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3083.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3083" />
+							<DAI name="subVal" sAddr="3083" />
+							<DAI name="subQ" sAddr="3083" />
+							<DAI name="subID" sAddr="3083" />
+							<DAI name="blkEna" sAddr="3083" />
+						</DOI>
+						<DOI name="SPCSO03">
+							<Private type="EFADOName_DOI">Out2</Private>
+							<DAI name="stVal" sAddr="3084.0" />
+							<DAI name="q" sAddr="3084.1" />
+							<DAI name="t" sAddr="3084.2" />
+							<DAI name="stSeld" sAddr="3084.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3084.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3084.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3084.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3084.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3084.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3084.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3084.9" />
+							<DAI name="sboClass" sAddr="3084.10" />
+							<DAI name="operTimeout" sAddr="3084.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3084.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3084.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3084.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3084" />
+							<DAI name="subVal" sAddr="3084" />
+							<DAI name="subQ" sAddr="3084" />
+							<DAI name="subID" sAddr="3084" />
+							<DAI name="blkEna" sAddr="3084" />
+						</DOI>
+						<DOI name="SPCSO04">
+							<Private type="EFADOName_DOI">Out3</Private>
+							<DAI name="stVal" sAddr="3085.0" />
+							<DAI name="q" sAddr="3085.1" />
+							<DAI name="t" sAddr="3085.2" />
+							<DAI name="stSeld" sAddr="3085.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3085.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3085.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3085.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3085.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3085.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3085.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3085.9" />
+							<DAI name="sboClass" sAddr="3085.10" />
+							<DAI name="operTimeout" sAddr="3085.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3085.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3085.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3085.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3085" />
+							<DAI name="subVal" sAddr="3085" />
+							<DAI name="subQ" sAddr="3085" />
+							<DAI name="subID" sAddr="3085" />
+							<DAI name="blkEna" sAddr="3085" />
+						</DOI>
+						<DOI name="SPCSO05">
+							<Private type="EFADOName_DOI">Out4</Private>
+							<DAI name="stVal" sAddr="3086.0" />
+							<DAI name="q" sAddr="3086.1" />
+							<DAI name="t" sAddr="3086.2" />
+							<DAI name="stSeld" sAddr="3086.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3086.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3086.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3086.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3086.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3086.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3086.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3086.9" />
+							<DAI name="sboClass" sAddr="3086.10" />
+							<DAI name="operTimeout" sAddr="3086.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3086.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3086.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3086.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3086" />
+							<DAI name="subVal" sAddr="3086" />
+							<DAI name="subQ" sAddr="3086" />
+							<DAI name="subID" sAddr="3086" />
+							<DAI name="blkEna" sAddr="3086" />
+						</DOI>
+						<DOI name="SPCSO06">
+							<Private type="EFADOName_DOI">Out5</Private>
+							<DAI name="stVal" sAddr="3087.0" />
+							<DAI name="q" sAddr="3087.1" />
+							<DAI name="t" sAddr="3087.2" />
+							<DAI name="stSeld" sAddr="3087.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3087.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3087.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3087.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3087.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3087.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3087.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3087.9" />
+							<DAI name="sboClass" sAddr="3087.10" />
+							<DAI name="operTimeout" sAddr="3087.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3087.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3087.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3087.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3087" />
+							<DAI name="subVal" sAddr="3087" />
+							<DAI name="subQ" sAddr="3087" />
+							<DAI name="subID" sAddr="3087" />
+							<DAI name="blkEna" sAddr="3087" />
+						</DOI>
+						<DOI name="SPCSO07">
+							<Private type="EFADOName_DOI">Out6</Private>
+							<DAI name="stVal" sAddr="3088.0" />
+							<DAI name="q" sAddr="3088.1" />
+							<DAI name="t" sAddr="3088.2" />
+							<DAI name="stSeld" sAddr="3088.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3088.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3088.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3088.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3088.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3088.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3088.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3088.9" />
+							<DAI name="sboClass" sAddr="3088.10" />
+							<DAI name="operTimeout" sAddr="3088.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3088.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3088.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3088.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3088" />
+							<DAI name="subVal" sAddr="3088" />
+							<DAI name="subQ" sAddr="3088" />
+							<DAI name="subID" sAddr="3088" />
+							<DAI name="blkEna" sAddr="3088" />
+						</DOI>
+						<DOI name="SPCSO08">
+							<Private type="EFADOName_DOI">Out7</Private>
+							<DAI name="stVal" sAddr="3089.0" />
+							<DAI name="q" sAddr="3089.1" />
+							<DAI name="t" sAddr="3089.2" />
+							<DAI name="stSeld" sAddr="3089.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3089.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3089.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3089.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3089.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3089.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3089.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3089.9" />
+							<DAI name="sboClass" sAddr="3089.10" />
+							<DAI name="operTimeout" sAddr="3089.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3089.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3089.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3089.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3089" />
+							<DAI name="subVal" sAddr="3089" />
+							<DAI name="subQ" sAddr="3089" />
+							<DAI name="subID" sAddr="3089" />
+							<DAI name="blkEna" sAddr="3089" />
+						</DOI>
+						<DOI name="SPCSO09">
+							<Private type="EFADOName_DOI">Out8</Private>
+							<DAI name="stVal" sAddr="3090.0" />
+							<DAI name="q" sAddr="3090.1" />
+							<DAI name="t" sAddr="3090.2" />
+							<DAI name="stSeld" sAddr="3090.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3090.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3090.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3090.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3090.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3090.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3090.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3090.9" />
+							<DAI name="sboClass" sAddr="3090.10" />
+							<DAI name="operTimeout" sAddr="3090.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3090.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3090.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3090.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3090" />
+							<DAI name="subVal" sAddr="3090" />
+							<DAI name="subQ" sAddr="3090" />
+							<DAI name="subID" sAddr="3090" />
+							<DAI name="blkEna" sAddr="3090" />
+						</DOI>
+					</LN>
+					<LN lnClass="GGIO" lnType="EFA_GGIO8" inst="1" prefix="SL1">
+						<Private type="EFAFunction">9287ab3e-442e-4a21-944d-18db903a74be</Private>
+						<Private type="EFAFunctionName">SL1</Private>
+						<Private type="EFA_MapType">EFA_GGIO</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2845.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2845.1" />
+							<DAI name="t" sAddr="2845.2" />
+							<DAI name="subEna" sAddr="2845" />
+							<DAI name="subVal" sAddr="2845" />
+							<DAI name="subQ" sAddr="2845" />
+							<DAI name="subID" sAddr="2845" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2842.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2842.1" />
+							<DAI name="t" sAddr="2842.2" />
+							<DAI name="subEna" sAddr="2842" />
+							<DAI name="subVal" sAddr="2842" />
+							<DAI name="subQ" sAddr="2842" />
+							<DAI name="subID" sAddr="2842" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2843.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2843.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2843.1" />
+							<DAI name="t" sAddr="2843.2" />
+							<DAI name="stSeld" sAddr="2843.15" />
+							<DAI name="ctlModel" sAddr="2843.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2843.9" />
+							<DAI name="sboClass" sAddr="2843.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2843.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2843.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2843.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2843.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2843" />
+							<DAI name="subVal" sAddr="2843" />
+							<DAI name="subQ" sAddr="2843" />
+							<DAI name="subID" sAddr="2843" />
+						</DOI>
+						<DOI name="Ind01">
+							<Private type="EFADOName_DOI">IN1</Private>
+							<DAI name="stVal" sAddr="3091.0" />
+							<DAI name="q" sAddr="3091.1" />
+							<DAI name="t" sAddr="3091.2" />
+							<DAI name="subEna" sAddr="3091" />
+							<DAI name="subVal" sAddr="3091" />
+							<DAI name="subQ" sAddr="3091" />
+							<DAI name="subID" sAddr="3091" />
+							<DAI name="blkEna" sAddr="3091" />
+						</DOI>
+						<DOI name="Ind02">
+							<Private type="EFADOName_DOI">IN2</Private>
+							<DAI name="stVal" sAddr="3092.0" />
+							<DAI name="q" sAddr="3092.1" />
+							<DAI name="t" sAddr="3092.2" />
+							<DAI name="subEna" sAddr="3092" />
+							<DAI name="subVal" sAddr="3092" />
+							<DAI name="subQ" sAddr="3092" />
+							<DAI name="subID" sAddr="3092" />
+							<DAI name="blkEna" sAddr="3092" />
+						</DOI>
+						<DOI name="Ind03">
+							<Private type="EFADOName_DOI">IN3</Private>
+							<DAI name="stVal" sAddr="3093.0" />
+							<DAI name="q" sAddr="3093.1" />
+							<DAI name="t" sAddr="3093.2" />
+							<DAI name="subEna" sAddr="3093" />
+							<DAI name="subVal" sAddr="3093" />
+							<DAI name="subQ" sAddr="3093" />
+							<DAI name="subID" sAddr="3093" />
+							<DAI name="blkEna" sAddr="3093" />
+						</DOI>
+						<DOI name="Ind04">
+							<Private type="EFADOName_DOI">IN4</Private>
+							<DAI name="stVal" sAddr="3094.0" />
+							<DAI name="q" sAddr="3094.1" />
+							<DAI name="t" sAddr="3094.2" />
+							<DAI name="subEna" sAddr="3094" />
+							<DAI name="subVal" sAddr="3094" />
+							<DAI name="subQ" sAddr="3094" />
+							<DAI name="subID" sAddr="3094" />
+							<DAI name="blkEna" sAddr="3094" />
+						</DOI>
+						<DOI name="Ind05">
+							<Private type="EFADOName_DOI">IN5</Private>
+							<DAI name="stVal" sAddr="3095.0" />
+							<DAI name="q" sAddr="3095.1" />
+							<DAI name="t" sAddr="3095.2" />
+							<DAI name="subEna" sAddr="3095" />
+							<DAI name="subVal" sAddr="3095" />
+							<DAI name="subQ" sAddr="3095" />
+							<DAI name="subID" sAddr="3095" />
+							<DAI name="blkEna" sAddr="3095" />
+						</DOI>
+						<DOI name="Ind06">
+							<Private type="EFADOName_DOI">IN6</Private>
+							<DAI name="stVal" sAddr="3096.0" />
+							<DAI name="q" sAddr="3096.1" />
+							<DAI name="t" sAddr="3096.2" />
+							<DAI name="subEna" sAddr="3096" />
+							<DAI name="subVal" sAddr="3096" />
+							<DAI name="subQ" sAddr="3096" />
+							<DAI name="subID" sAddr="3096" />
+							<DAI name="blkEna" sAddr="3096" />
+						</DOI>
+						<DOI name="Ind07">
+							<Private type="EFADOName_DOI">IN7</Private>
+							<DAI name="stVal" sAddr="3097.0" />
+							<DAI name="q" sAddr="3097.1" />
+							<DAI name="t" sAddr="3097.2" />
+							<DAI name="subEna" sAddr="3097" />
+							<DAI name="subVal" sAddr="3097" />
+							<DAI name="subQ" sAddr="3097" />
+							<DAI name="subID" sAddr="3097" />
+							<DAI name="blkEna" sAddr="3097" />
+						</DOI>
+						<DOI name="Ind08">
+							<Private type="EFADOName_DOI">IN8</Private>
+							<DAI name="stVal" sAddr="3098.0" />
+							<DAI name="q" sAddr="3098.1" />
+							<DAI name="t" sAddr="3098.2" />
+							<DAI name="subEna" sAddr="3098" />
+							<DAI name="subVal" sAddr="3098" />
+							<DAI name="subQ" sAddr="3098" />
+							<DAI name="subID" sAddr="3098" />
+							<DAI name="blkEna" sAddr="3098" />
+						</DOI>
+						<DOI name="SPCSO01">
+							<Private type="EFADOName_DOI">Reset</Private>
+							<DAI name="stVal" sAddr="3099.0" />
+							<DAI name="q" sAddr="3099.1" />
+							<DAI name="t" sAddr="3099.2" />
+							<DAI name="stSeld" sAddr="3099.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3099.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3099.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3099.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3099.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3099.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3099.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3099.9" />
+							<DAI name="sboClass" sAddr="3099.10" />
+							<DAI name="operTimeout" sAddr="3099.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3099.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3099.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3099.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3099" />
+							<DAI name="subVal" sAddr="3099" />
+							<DAI name="subQ" sAddr="3099" />
+							<DAI name="subID" sAddr="3099" />
+							<DAI name="blkEna" sAddr="3099" />
+						</DOI>
+						<DOI name="SPCSO02">
+							<Private type="EFADOName_DOI">Out1</Private>
+							<DAI name="stVal" sAddr="3100.0" />
+							<DAI name="q" sAddr="3100.1" />
+							<DAI name="t" sAddr="3100.2" />
+							<DAI name="stSeld" sAddr="3100.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3100.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3100.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3100.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3100.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3100.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3100.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3100.9" />
+							<DAI name="sboClass" sAddr="3100.10" />
+							<DAI name="operTimeout" sAddr="3100.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3100.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3100.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3100.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3100" />
+							<DAI name="subVal" sAddr="3100" />
+							<DAI name="subQ" sAddr="3100" />
+							<DAI name="subID" sAddr="3100" />
+							<DAI name="blkEna" sAddr="3100" />
+						</DOI>
+						<DOI name="SPCSO03">
+							<Private type="EFADOName_DOI">Out2</Private>
+							<DAI name="stVal" sAddr="3101.0" />
+							<DAI name="q" sAddr="3101.1" />
+							<DAI name="t" sAddr="3101.2" />
+							<DAI name="stSeld" sAddr="3101.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3101.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3101.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3101.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3101.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3101.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3101.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3101.9" />
+							<DAI name="sboClass" sAddr="3101.10" />
+							<DAI name="operTimeout" sAddr="3101.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3101.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3101.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3101.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3101" />
+							<DAI name="subVal" sAddr="3101" />
+							<DAI name="subQ" sAddr="3101" />
+							<DAI name="subID" sAddr="3101" />
+							<DAI name="blkEna" sAddr="3101" />
+						</DOI>
+						<DOI name="SPCSO04">
+							<Private type="EFADOName_DOI">Out3</Private>
+							<DAI name="stVal" sAddr="3102.0" />
+							<DAI name="q" sAddr="3102.1" />
+							<DAI name="t" sAddr="3102.2" />
+							<DAI name="stSeld" sAddr="3102.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3102.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3102.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3102.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3102.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3102.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3102.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3102.9" />
+							<DAI name="sboClass" sAddr="3102.10" />
+							<DAI name="operTimeout" sAddr="3102.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3102.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3102.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3102.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3102" />
+							<DAI name="subVal" sAddr="3102" />
+							<DAI name="subQ" sAddr="3102" />
+							<DAI name="subID" sAddr="3102" />
+							<DAI name="blkEna" sAddr="3102" />
+						</DOI>
+						<DOI name="SPCSO05">
+							<Private type="EFADOName_DOI">Out4</Private>
+							<DAI name="stVal" sAddr="3103.0" />
+							<DAI name="q" sAddr="3103.1" />
+							<DAI name="t" sAddr="3103.2" />
+							<DAI name="stSeld" sAddr="3103.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3103.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3103.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3103.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3103.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3103.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3103.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3103.9" />
+							<DAI name="sboClass" sAddr="3103.10" />
+							<DAI name="operTimeout" sAddr="3103.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3103.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3103.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3103.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3103" />
+							<DAI name="subVal" sAddr="3103" />
+							<DAI name="subQ" sAddr="3103" />
+							<DAI name="subID" sAddr="3103" />
+							<DAI name="blkEna" sAddr="3103" />
+						</DOI>
+						<DOI name="SPCSO06">
+							<Private type="EFADOName_DOI">Out5</Private>
+							<DAI name="stVal" sAddr="3104.0" />
+							<DAI name="q" sAddr="3104.1" />
+							<DAI name="t" sAddr="3104.2" />
+							<DAI name="stSeld" sAddr="3104.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3104.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3104.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3104.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3104.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3104.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3104.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3104.9" />
+							<DAI name="sboClass" sAddr="3104.10" />
+							<DAI name="operTimeout" sAddr="3104.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3104.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3104.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3104.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3104" />
+							<DAI name="subVal" sAddr="3104" />
+							<DAI name="subQ" sAddr="3104" />
+							<DAI name="subID" sAddr="3104" />
+							<DAI name="blkEna" sAddr="3104" />
+						</DOI>
+						<DOI name="SPCSO07">
+							<Private type="EFADOName_DOI">Out6</Private>
+							<DAI name="stVal" sAddr="3105.0" />
+							<DAI name="q" sAddr="3105.1" />
+							<DAI name="t" sAddr="3105.2" />
+							<DAI name="stSeld" sAddr="3105.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3105.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3105.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3105.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3105.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3105.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3105.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3105.9" />
+							<DAI name="sboClass" sAddr="3105.10" />
+							<DAI name="operTimeout" sAddr="3105.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3105.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3105.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3105.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3105" />
+							<DAI name="subVal" sAddr="3105" />
+							<DAI name="subQ" sAddr="3105" />
+							<DAI name="subID" sAddr="3105" />
+							<DAI name="blkEna" sAddr="3105" />
+						</DOI>
+						<DOI name="SPCSO08">
+							<Private type="EFADOName_DOI">Out7</Private>
+							<DAI name="stVal" sAddr="3106.0" />
+							<DAI name="q" sAddr="3106.1" />
+							<DAI name="t" sAddr="3106.2" />
+							<DAI name="stSeld" sAddr="3106.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3106.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3106.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3106.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3106.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3106.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3106.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3106.9" />
+							<DAI name="sboClass" sAddr="3106.10" />
+							<DAI name="operTimeout" sAddr="3106.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3106.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3106.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3106.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3106" />
+							<DAI name="subVal" sAddr="3106" />
+							<DAI name="subQ" sAddr="3106" />
+							<DAI name="subID" sAddr="3106" />
+							<DAI name="blkEna" sAddr="3106" />
+						</DOI>
+						<DOI name="SPCSO09">
+							<Private type="EFADOName_DOI">Out8</Private>
+							<DAI name="stVal" sAddr="3107.0" />
+							<DAI name="q" sAddr="3107.1" />
+							<DAI name="t" sAddr="3107.2" />
+							<DAI name="stSeld" sAddr="3107.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="3107.3">
+									<Val>process</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="3107.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="3107.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="3107.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="3107.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="3107.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="3107.9" />
+							<DAI name="sboClass" sAddr="3107.10" />
+							<DAI name="operTimeout" sAddr="3107.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="3107.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="3107.5" />
+								</SDI>
+								<DAI name="Test" sAddr="3107.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="3107" />
+							<DAI name="subVal" sAddr="3107" />
+							<DAI name="subQ" sAddr="3107" />
+							<DAI name="subID" sAddr="3107" />
+							<DAI name="blkEna" sAddr="3107" />
+						</DOI>
+					</LN>
+					<LN lnClass="GGIO" lnType="EFA_GGIO9" inst="1" prefix="GOOSE_IN">
+						<Private type="EFAFunction">1456e28c-365d-418e-9e17-4dd09838e971</Private>
+						<Private type="EFAFunctionName">GOOSE_IN</Private>
+						<Private type="EFA_MapType">EFA_GGIO</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2845.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2845.1" />
+							<DAI name="t" sAddr="2845.2" />
+							<DAI name="subEna" sAddr="2845" />
+							<DAI name="subVal" sAddr="2845" />
+							<DAI name="subQ" sAddr="2845" />
+							<DAI name="subID" sAddr="2845" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2842.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2842.1" />
+							<DAI name="t" sAddr="2842.2" />
+							<DAI name="subEna" sAddr="2842" />
+							<DAI name="subVal" sAddr="2842" />
+							<DAI name="subQ" sAddr="2842" />
+							<DAI name="subID" sAddr="2842" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2843.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2843.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2843.1" />
+							<DAI name="t" sAddr="2843.2" />
+							<DAI name="stSeld" sAddr="2843.15" />
+							<DAI name="ctlModel" sAddr="2843.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2843.9" />
+							<DAI name="sboClass" sAddr="2843.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2843.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2843.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2843.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2843.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2843" />
+							<DAI name="subVal" sAddr="2843" />
+							<DAI name="subQ" sAddr="2843" />
+							<DAI name="subID" sAddr="2843" />
+						</DOI>
+					</LN>
+				</LDevice>
+				<LDevice inst="DIAG">
+					<Private type="EFALDev">86e699fb-7a97-4644-83cf-e9105b056ff5</Private>
+					<LN0 lnClass="LLN0" lnType="EFA_LLN0" inst="">
+						<Private type="EFA_MapType">EFA_LLN0</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="ldNs">
+								<Val>IEC 61850-7-4:2007A</Val>
+							</DAI>
+							<DAI name="d" sAddr="2884.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2885.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2885.1" />
+							<DAI name="t" sAddr="2885.2" />
+							<DAI name="subEna" sAddr="2885" />
+							<DAI name="subVal" sAddr="2885" />
+							<DAI name="subQ" sAddr="2885" />
+							<DAI name="subID" sAddr="2885" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2882.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2882.1" />
+							<DAI name="t" sAddr="2882.2" />
+							<DAI name="subEna" sAddr="2882" />
+							<DAI name="subVal" sAddr="2882" />
+							<DAI name="subQ" sAddr="2882" />
+							<DAI name="subID" sAddr="2882" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2883.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2883.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2883.1" />
+							<DAI name="t" sAddr="2883.2" />
+							<DAI name="stSeld" sAddr="2883.15" />
+							<DAI name="ctlModel" sAddr="2883.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2883.9" />
+							<DAI name="sboClass" sAddr="2883.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2883.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2883.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2883.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2883.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2883" />
+							<DAI name="subVal" sAddr="2883" />
+							<DAI name="subQ" sAddr="2883" />
+							<DAI name="subID" sAddr="2883" />
+						</DOI>
+						<DOI name="Loc">
+							<DAI name="stVal" sAddr="2881.0" />
+							<DAI name="q" sAddr="2881.1" />
+							<DAI name="t" sAddr="2881.2" />
+							<DAI name="subEna" sAddr="2881" />
+							<DAI name="subVal" sAddr="2881" />
+							<DAI name="subQ" sAddr="2881" />
+							<DAI name="subID" sAddr="2881" />
+							<DAI name="blkEna" sAddr="2881" />
+						</DOI>
+						<DOI name="LocSta">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2880.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2880.0" />
+							<DAI name="q" sAddr="2880.1" />
+							<DAI name="t" sAddr="2880.2" />
+							<DAI name="stSeld" sAddr="2880.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="2880.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="2880.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="2880.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="2880.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="2880.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2880.9" />
+							<DAI name="sboClass" sAddr="2880.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2880.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2880.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2880.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2880.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2880" />
+							<DAI name="subVal" sAddr="2880" />
+							<DAI name="subQ" sAddr="2880" />
+							<DAI name="subID" sAddr="2880" />
+							<DAI name="blkEna" sAddr="2880" />
+						</DOI>
+						<SettingControl numOfSGs="4" />
+					</LN0>
+					<LN lnClass="LPHD" lnType="EFA_LPHD" inst="1">
+						<Private type="EFA_MapType">EFA_LPHD</Private>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2885.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2885.1" />
+							<DAI name="t" sAddr="2885.2" />
+							<DAI name="subEna" sAddr="2885" />
+							<DAI name="subVal" sAddr="2885" />
+							<DAI name="subQ" sAddr="2885" />
+							<DAI name="subID" sAddr="2885" />
+						</DOI>
+						<DOI name="InOv">
+							<DAI name="stVal" sAddr="556.0" />
+							<DAI name="q" sAddr="556.1" />
+							<DAI name="t" sAddr="556.2" />
+							<DAI name="subEna" sAddr="556" />
+							<DAI name="subVal" sAddr="556" />
+							<DAI name="subQ" sAddr="556" />
+							<DAI name="subID" sAddr="556" />
+							<DAI name="blkEna" sAddr="556" />
+						</DOI>
+						<DOI name="NumPwrUp">
+							<DAI name="stVal" sAddr="38.0" />
+							<DAI name="q" sAddr="38.1" />
+							<DAI name="t" sAddr="38.2" />
+							<DAI name="subEna" sAddr="38" />
+							<DAI name="subVal" sAddr="38" />
+							<DAI name="subQ" sAddr="38" />
+							<DAI name="subID" sAddr="38" />
+							<DAI name="blkEna" sAddr="38" />
+						</DOI>
+						<DOI name="OutOv">
+							<DAI name="stVal" sAddr="557.0" />
+							<DAI name="q" sAddr="557.1" />
+							<DAI name="t" sAddr="557.2" />
+							<DAI name="subEna" sAddr="557" />
+							<DAI name="subVal" sAddr="557" />
+							<DAI name="subQ" sAddr="557" />
+							<DAI name="subID" sAddr="557" />
+							<DAI name="blkEna" sAddr="557" />
+						</DOI>
+						<DOI name="PhyHealth">
+							<DAI name="stVal" sAddr="39.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="39.1" />
+							<DAI name="t" sAddr="39.2" />
+							<DAI name="subEna" sAddr="39" />
+							<DAI name="subVal" sAddr="39" />
+							<DAI name="subQ" sAddr="39" />
+							<DAI name="subID" sAddr="39" />
+						</DOI>
+						<DOI name="PhyNam">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="hwRev" sAddr="48.0" />
+							<DAI name="swRev" sAddr="47.0" />
+							<DAI name="serNum" sAddr="49.0" />
+							<DAI name="model" sAddr="50.0">
+								<Val>TPU S220 S 1 2 C C 1 X 1 1A 1S 2 2 CX</Val>
+							</DAI>
+							<DAI name="location" sAddr="43.0">
+								<Val>PreTests/EFACONF</Val>
+							</DAI>
+							<DAI name="owner" sAddr="42.0">
+								<Val>Utility</Val>
+							</DAI>
+							<DAI name="ePSName" sAddr="41.0">
+								<Val>Bay</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Proxy">
+							<DAI name="stVal" sAddr="559.0" />
+							<DAI name="q" sAddr="559.1" />
+							<DAI name="t" sAddr="559.2" />
+							<DAI name="subEna" sAddr="559" />
+							<DAI name="subVal" sAddr="559" />
+							<DAI name="subQ" sAddr="559" />
+							<DAI name="subID" sAddr="559" />
+							<DAI name="blkEna" sAddr="559" />
+						</DOI>
+						<DOI name="RsStat">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="36.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="36.0" />
+							<DAI name="q" sAddr="36.1" />
+							<DAI name="t" sAddr="36.2" />
+							<DAI name="stSeld" sAddr="36.16" />
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="36.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="36.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="36.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="36.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="36.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="36.9" />
+							<DAI name="sboClass" sAddr="36.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="36.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="36.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="36.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="36.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="36" />
+							<DAI name="subVal" sAddr="36" />
+							<DAI name="subQ" sAddr="36" />
+							<DAI name="subID" sAddr="36" />
+							<DAI name="blkEna" sAddr="36" />
+						</DOI>
+						<DOI name="WrmStr">
+							<DAI name="stVal" sAddr="37.0" />
+							<DAI name="q" sAddr="37.1" />
+							<DAI name="t" sAddr="37.2" />
+							<DAI name="subEna" sAddr="37" />
+							<DAI name="subVal" sAddr="37" />
+							<DAI name="subQ" sAddr="37" />
+							<DAI name="subID" sAddr="37" />
+							<DAI name="blkEna" sAddr="37" />
+						</DOI>
+						<DOI name="OpTmh">
+							<DAI name="stVal" sAddr="35.0" />
+							<DAI name="q" sAddr="35.1" />
+							<DAI name="t" sAddr="35.2" />
+							<DAI name="dataNs">
+								<Val>EFACEC:2014</Val>
+							</DAI>
+							<DAI name="subEna" sAddr="35" />
+							<DAI name="subVal" sAddr="35" />
+							<DAI name="subQ" sAddr="35" />
+							<DAI name="subID" sAddr="35" />
+							<DAI name="blkEna" sAddr="35" />
+						</DOI>
+					</LN>
+					<LN lnClass="GAPC" lnType="EFA_GAPC4" inst="1" prefix="MNGT">
+						<Private type="EFAFunction">34cf81e3-1a7a-4df3-8cd1-653f46acccbb</Private>
+						<Private type="EFAFunctionName">MNGT</Private>
+						<Private type="EFA_MapType">EFA_GAPC</Private>
+						<DOI name="NamPlt">
+							<DAI name="vendor" sAddr="51.0">
+								<Val>Efacec</Val>
+							</DAI>
+							<DAI name="swRev" sAddr="47.0" />
+						</DOI>
+						<DOI name="Beh">
+							<DAI name="stVal" sAddr="2885.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2885.1" />
+							<DAI name="t" sAddr="2885.2" />
+							<DAI name="subEna" sAddr="2885" />
+							<DAI name="subVal" sAddr="2885" />
+							<DAI name="subQ" sAddr="2885" />
+							<DAI name="subID" sAddr="2885" />
+						</DOI>
+						<DOI name="Health">
+							<DAI name="stVal" sAddr="2882.0">
+								<Val>Ok</Val>
+							</DAI>
+							<DAI name="q" sAddr="2882.1" />
+							<DAI name="t" sAddr="2882.2" />
+							<DAI name="subEna" sAddr="2882" />
+							<DAI name="subVal" sAddr="2882" />
+							<DAI name="subQ" sAddr="2882" />
+							<DAI name="subID" sAddr="2882" />
+						</DOI>
+						<DOI name="Mod">
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2883.3">
+									<Val>not-supported</Val>
+								</DAI>
+							</SDI>
+							<DAI name="stVal" sAddr="2883.0">
+								<Val>on</Val>
+							</DAI>
+							<DAI name="q" sAddr="2883.1" />
+							<DAI name="t" sAddr="2883.2" />
+							<DAI name="stSeld" sAddr="2883.15" />
+							<DAI name="ctlModel" sAddr="2883.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2883.9" />
+							<DAI name="sboClass" sAddr="2883.10">
+								<Val>operate-once</Val>
+							</DAI>
+							<DAI name="operTimeout" sAddr="2883.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2883.4" />
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2883.5">
+										<Val>not-supported</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2883.6" />
+							</SDI>
+							<DAI name="subEna" sAddr="2883" />
+							<DAI name="subVal" sAddr="2883" />
+							<DAI name="subQ" sAddr="2883" />
+							<DAI name="subID" sAddr="2883" />
+						</DOI>
+						<DOI name="Str">
+							<DAI name="general">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="dirGeneral">
+								<Val>unknown</Val>
+							</DAI>
+						</DOI>
+						<DOI name="Op">
+							<DAI name="general">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="DPCSO01">
+							<Private type="EFADOName_DOI">CBSimulator</Private>
+							<DAI name="stVal" sAddr="2886.0">
+								<Val>intermediate</Val>
+							</DAI>
+							<DAI name="q" sAddr="2886.1" />
+							<DAI name="t" sAddr="2886.2" />
+							<DAI name="stSeld" sAddr="2886.16" />
+							<SDI name="origin">
+								<DAI name="orCat" sAddr="2886.3">
+									<Val>automatic-bay</Val>
+								</DAI>
+							</SDI>
+							<SDI name="pulseConfig">
+								<DAI name="cmdQual" sAddr="2886.11">
+									<Val>pulse</Val>
+								</DAI>
+								<DAI name="onDur" sAddr="2886.12">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="offDur" sAddr="2886.13">
+									<Val>1000</Val>
+								</DAI>
+								<DAI name="numPls" sAddr="2886.14">
+									<Val>1</Val>
+								</DAI>
+							</SDI>
+							<DAI name="ctlModel" sAddr="2886.7">
+								<Val>direct-with-normal-security</Val>
+							</DAI>
+							<DAI name="sboTimeout" sAddr="2886.9" />
+							<DAI name="sboClass" sAddr="2886.10" />
+							<DAI name="operTimeout" sAddr="2886.8" />
+							<SDI name="Oper">
+								<DAI name="ctlVal" sAddr="2886.4">
+									<Val>0</Val>
+								</DAI>
+								<SDI name="origin">
+									<DAI name="orCat" sAddr="2886.5">
+										<Val>automatic-bay</Val>
+									</DAI>
+								</SDI>
+								<DAI name="Test" sAddr="2886.6">
+									<Val>0</Val>
+								</DAI>
+							</SDI>
+							<DAI name="subEna" sAddr="2886">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subVal" sAddr="2886">
+								<Val>intermediate</Val>
+							</DAI>
+							<DAI name="subQ" sAddr="2886">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subID" sAddr="2886">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="blkEna" sAddr="2886">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO01">
+							<Private type="EFADOName_DOI">Fail</Private>
+							<DAI name="stVal" sAddr="2887.0">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="q" sAddr="2887.1" />
+							<DAI name="t" sAddr="2887.2" />
+							<DAI name="subEna" sAddr="2887">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subVal" sAddr="2887">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subQ" sAddr="2887">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subID" sAddr="2887">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="blkEna" sAddr="2887">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO02">
+							<Private type="EFADOName_DOI">CBOpen</Private>
+							<DAI name="stVal" sAddr="2888.0">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="q" sAddr="2888.1" />
+							<DAI name="t" sAddr="2888.2" />
+							<DAI name="subEna" sAddr="2888">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subVal" sAddr="2888">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subQ" sAddr="2888">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subID" sAddr="2888">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="blkEna" sAddr="2888">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO03">
+							<Private type="EFADOName_DOI">CBClosed</Private>
+							<DAI name="stVal" sAddr="2889.0">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="q" sAddr="2889.1" />
+							<DAI name="t" sAddr="2889.2" />
+							<DAI name="subEna" sAddr="2889">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subVal" sAddr="2889">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subQ" sAddr="2889">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subID" sAddr="2889">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="blkEna" sAddr="2889">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+						<DOI name="SPCSO04">
+							<Private type="EFADOName_DOI">LocalRemote</Private>
+							<DAI name="stVal" sAddr="3073.0">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="q" sAddr="3073.1" />
+							<DAI name="t" sAddr="3073.2" />
+							<DAI name="subEna" sAddr="3073">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subVal" sAddr="3073">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subQ" sAddr="3073">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="subID" sAddr="3073">
+								<Val>0</Val>
+							</DAI>
+							<DAI name="blkEna" sAddr="3073">
+								<Val>0</Val>
+							</DAI>
+						</DOI>
+					</LN>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="EFA_LPHD" lnClass="LPHD">
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="InOv" type="SPS2" />
+			<DO name="NumPwrUp" type="INS1" />
+			<DO name="OutOv" type="SPS2" />
+			<DO name="PhyHealth" type="ENS_Health2" />
+			<DO name="PhyNam" type="DPL" />
+			<DO name="Proxy" type="SPS2" />
+			<DO name="RsStat" type="SPC3" />
+			<DO name="WrmStr" type="INS1" />
+			<DO name="OpTmh" type="INS3" />
+		</LNodeType>
+		<LNodeType id="EFA_LLN0" lnClass="LLN0">
+			<DO name="NamPlt" type="LPL" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="Loc" type="SPS2" />
+			<DO name="LocSta" type="SPC3" />
+		</LNodeType>
+		<LNodeType id="EFA_CALH2" lnClass="CALH">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="GrAlm" type="SPS2" />
+		</LNodeType>
+		<LNodeType id="EFA_CALH3" lnClass="CALH">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="GrAlm" type="SPS2" />
+			<DO desc="General pickup" name="Alm1" type="SPS5">
+				<Private type="EFADOName">2654</Private>
+				<Private type="EFA_Alarm_Input">3d3cf1c9-d2dc-492b-ad75-fdb1e6474b4e</Private>
+				<Private type="EFATypeSource">3d3cf1c9-d2dc-492b-ad75-fdb1e6474b4e</Private>
+			</DO>
+		</LNodeType>
+		<LNodeType id="EFA_CALH4" lnClass="CALH">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="GrAlm" type="SPS2" />
+			<DO desc="External trip" name="Alm1" type="SPS5">
+				<Private type="EFADOName">2652</Private>
+				<Private type="EFA_Alarm_Input">7727037e-10a3-44fe-8989-ba74d94b1d1f</Private>
+				<Private type="EFATypeSource">7727037e-10a3-44fe-8989-ba74d94b1d1f</Private>
+			</DO>
+		</LNodeType>
+		<LNodeType id="EFA_CALH5" lnClass="CALH">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="GrAlm" type="SPS2" />
+		</LNodeType>
+		<LNodeType id="EFA_CALH6" lnClass="CALH">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="GrAlm" type="SPS2" />
+		</LNodeType>
+		<LNodeType id="EFA_CALH7" lnClass="CALH">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="GrAlm" type="SPS2" />
+		</LNodeType>
+		<LNodeType id="CBCSWI1" lnClass="CSWI">
+			<DO name="NamPlt" type="LPL1" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="OpCls" type="ACT" />
+			<DO name="OpCntRs" type="INC1" />
+			<DO name="OpOpn" type="ACT" />
+			<DO name="Pos" type="DPC2" />
+			<DO name="OpDls" type="INS3" />
+			<DO name="SynPrg" type="SPS4" />
+			<DO name="SynFail" type="SPS4" />
+			<DO name="Byp" type="SPC4" />
+		</LNodeType>
+		<LNodeType id="EFA_GGIO7" lnClass="GGIO">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="Ind01" type="SPS2">
+				<Private type="EFADOName">3074</Private>
+				<Private type="EFATypeSource">b8197781-644e-4625-8e15-d695f6f10a75</Private>
+			</DO>
+			<DO name="Ind02" type="SPS2">
+				<Private type="EFADOName">3075</Private>
+				<Private type="EFATypeSource">f7609c1b-7db9-469e-bc9e-9a83a04c2f5a</Private>
+			</DO>
+			<DO name="Ind03" type="SPS2">
+				<Private type="EFADOName">3076</Private>
+				<Private type="EFATypeSource">69bbaebf-e9a5-4699-be51-da7e53ed2f6a</Private>
+			</DO>
+			<DO name="Ind04" type="SPS2">
+				<Private type="EFADOName">3077</Private>
+				<Private type="EFATypeSource">123540bc-72a2-45d5-837b-f436d673298e</Private>
+			</DO>
+			<DO name="Ind05" type="SPS2">
+				<Private type="EFADOName">3078</Private>
+				<Private type="EFATypeSource">abbeda8a-5088-4bf0-84d2-caaae2718688</Private>
+			</DO>
+			<DO name="Ind06" type="SPS2">
+				<Private type="EFADOName">3079</Private>
+				<Private type="EFATypeSource">85c18c56-a80d-4ece-9a8e-da2f44336fd9</Private>
+			</DO>
+			<DO name="Ind07" type="SPS2">
+				<Private type="EFADOName">3080</Private>
+				<Private type="EFATypeSource">f5f20aca-35c9-4bcf-b11a-42d1394a6125</Private>
+			</DO>
+			<DO name="Ind08" type="SPS2">
+				<Private type="EFADOName">3081</Private>
+				<Private type="EFATypeSource">3a9220a0-3d14-465b-9531-5646a0b868ba</Private>
+			</DO>
+			<DO name="SPCSO01" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3082</Private>
+				<Private type="EFATypeSource">9fd0bb36-babc-4d62-aa74-45639b58c38e</Private>
+			</DO>
+			<DO name="SPCSO02" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3083</Private>
+				<Private type="EFATypeSource">3cec4be2-7058-4ad5-b05b-8c80a3c7e7de</Private>
+			</DO>
+			<DO name="SPCSO03" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3084</Private>
+				<Private type="EFATypeSource">9aee908d-fd18-47d1-8535-44a6a3a025ad</Private>
+			</DO>
+			<DO name="SPCSO04" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3085</Private>
+				<Private type="EFATypeSource">0efef335-9d54-4287-89ed-473c6fa0cf70</Private>
+			</DO>
+			<DO name="SPCSO05" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3086</Private>
+				<Private type="EFATypeSource">7601c1a9-63e4-4674-88cf-6e045b5f310c</Private>
+			</DO>
+			<DO name="SPCSO06" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3087</Private>
+				<Private type="EFATypeSource">2d9fb4b5-4256-4d8c-9fe0-f6d2e179df86</Private>
+			</DO>
+			<DO name="SPCSO07" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3088</Private>
+				<Private type="EFATypeSource">f826f85b-f644-4122-ac7a-d0ec9ce592e1</Private>
+			</DO>
+			<DO name="SPCSO08" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3089</Private>
+				<Private type="EFATypeSource">3afc8bb7-2d37-42c1-91cf-9c16c18967e5</Private>
+			</DO>
+			<DO name="SPCSO09" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3090</Private>
+				<Private type="EFATypeSource">f711f536-ed9f-4a77-b8a5-7eebd0b762e6</Private>
+			</DO>
+		</LNodeType>
+		<LNodeType id="EFA_GGIO8" lnClass="GGIO">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="Ind01" type="SPS2">
+				<Private type="EFADOName">3091</Private>
+				<Private type="EFATypeSource">d6137a7b-4ec7-4932-bf2e-51fce02fb28c</Private>
+			</DO>
+			<DO name="Ind02" type="SPS2">
+				<Private type="EFADOName">3092</Private>
+				<Private type="EFATypeSource">0b113e97-5784-48e8-83a8-31f6d768eafd</Private>
+			</DO>
+			<DO name="Ind03" type="SPS2">
+				<Private type="EFADOName">3093</Private>
+				<Private type="EFATypeSource">cacec66e-2323-4c10-af1c-78d5b33c02f7</Private>
+			</DO>
+			<DO name="Ind04" type="SPS2">
+				<Private type="EFADOName">3094</Private>
+				<Private type="EFATypeSource">ce736f5e-1854-4574-b374-1c0fc65a190f</Private>
+			</DO>
+			<DO name="Ind05" type="SPS2">
+				<Private type="EFADOName">3095</Private>
+				<Private type="EFATypeSource">3690d924-d087-4179-a639-912d473fddef</Private>
+			</DO>
+			<DO name="Ind06" type="SPS2">
+				<Private type="EFADOName">3096</Private>
+				<Private type="EFATypeSource">8d12ba13-8b46-4c13-b150-3a87706edff8</Private>
+			</DO>
+			<DO name="Ind07" type="SPS2">
+				<Private type="EFADOName">3097</Private>
+				<Private type="EFATypeSource">21df64a3-fff4-48c8-8800-bf73e2c11074</Private>
+			</DO>
+			<DO name="Ind08" type="SPS2">
+				<Private type="EFADOName">3098</Private>
+				<Private type="EFATypeSource">ba49fc5d-ab7f-4fac-999e-0aa4dc2df6d9</Private>
+			</DO>
+			<DO name="SPCSO01" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3099</Private>
+				<Private type="EFATypeSource">5a42012c-107f-45ad-977e-15a67313a817</Private>
+			</DO>
+			<DO name="SPCSO02" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3100</Private>
+				<Private type="EFATypeSource">0965b20f-6f8b-4f56-82c0-0b57c74864f3</Private>
+			</DO>
+			<DO name="SPCSO03" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3101</Private>
+				<Private type="EFATypeSource">2e4cd24e-b189-469e-8d25-859fdae3c81a</Private>
+			</DO>
+			<DO name="SPCSO04" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3102</Private>
+				<Private type="EFATypeSource">04704f06-119f-4ea1-a617-329072e81eb0</Private>
+			</DO>
+			<DO name="SPCSO05" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3103</Private>
+				<Private type="EFATypeSource">92dc7e0f-4132-453f-bc6c-7b6a7dfc0669</Private>
+			</DO>
+			<DO name="SPCSO06" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3104</Private>
+				<Private type="EFATypeSource">d0fddf35-84da-4947-9542-2aa9a83aef04</Private>
+			</DO>
+			<DO name="SPCSO07" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3105</Private>
+				<Private type="EFATypeSource">477da9ca-aa8e-4625-bada-eac40a0f1328</Private>
+			</DO>
+			<DO name="SPCSO08" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3106</Private>
+				<Private type="EFATypeSource">86e1e56f-f1b4-4ce0-88a4-a172c9284ec8</Private>
+			</DO>
+			<DO name="SPCSO09" type="SPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">3107</Private>
+				<Private type="EFATypeSource">ce84cd20-201c-4ce7-9cf2-74d7089b1ad1</Private>
+			</DO>
+		</LNodeType>
+		<LNodeType id="EFA_GAPC4" lnClass="GAPC">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="Str" type="ACD" />
+			<DO name="Op" type="ACT1" />
+			<DO name="DPCSO01" type="DPC (DirectWithNormalSecurity)1">
+				<Private type="EFADOName">2886</Private>
+				<Private type="EFATypeSource">d719c3f7-e254-4048-9218-8ad1b5bade6e</Private>
+			</DO>
+			<DO name="SPCSO01" type="SPS2">
+				<Private type="EFADOName">2887</Private>
+				<Private type="EFATypeSource">42c1d455-26e2-43ab-84bf-03f86c5f8978</Private>
+			</DO>
+			<DO name="SPCSO02" type="SPS2">
+				<Private type="EFADOName">2888</Private>
+				<Private type="EFATypeSource">4928e6c9-479b-4572-9a4e-1c3e2d33e607</Private>
+			</DO>
+			<DO name="SPCSO03" type="SPS2">
+				<Private type="EFADOName">2889</Private>
+				<Private type="EFATypeSource">7232e4fe-66f3-473f-8397-b0dc606d6033</Private>
+			</DO>
+			<DO name="SPCSO04" type="SPS2">
+				<Private type="EFADOName">3073</Private>
+				<Private type="EFATypeSource">ca94dd09-e587-4d35-adac-4a84a77a221f</Private>
+			</DO>
+		</LNodeType>
+		<LNodeType id="TPBFRBRF3" lnClass="RBRF">
+			<DO name="NamPlt" type="LPL1" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+			<DO name="Blk" type="SPS2" />
+			<DO name="DetValA" type="ASG4" />
+			<DO name="FailTmms" type="ING4" />
+			<DO name="OpEx" type="ACT" />
+			<DO name="OpIn" type="ACT" />
+			<DO name="Str" type="ACD" />
+			<DO name="TPTrTmms" type="ING4" />
+			<DO name="CBFltOp" type="SPS4" />
+		</LNodeType>
+		<LNodeType id="EFA_GGIO9" lnClass="GGIO">
+			<DO name="NamPlt" type="LPL3" />
+			<DO name="Beh" type="ENS_Beh2" />
+			<DO name="Health" type="ENS_Health2" />
+			<DO name="Mod" type="ENC_Mod2" />
+		</LNodeType>
+		<LNodeType id="EFA_CALH13" lnClass="CALH">
+			<DO name="Mod" type="Mod INC1" />
+			<DO name="Beh" type="Beh INS1" />
+			<DO name="Health" type="Health INS1" />
+			<DO name="NamPlt" type="LPL4" />
+			<DO name="GrAlm" type="SPS6" />
+			<DO desc="Circuit breaker position" name="Alm1" type="DPC4">
+				<Private type="EFADOName">2608</Private>
+				<Private type="EFA_Alarm_Input">b1733445-7584-48f0-8bfe-f405fb9a6368</Private>
+				<Private type="EFATypeSource">b1733445-7584-48f0-8bfe-f405fb9a6368</Private>
+			</DO>
+		</LNodeType>
+		<LNodeType id="EFA_CALH15" lnClass="CALH">
+			<DO name="Mod" type="Mod INC1" />
+			<DO name="Beh" type="Beh INS1" />
+			<DO name="Health" type="Health INS1" />
+			<DO name="NamPlt" type="LPL4" />
+			<DO name="GrAlm" type="SPS6" />
+			<DO desc="Circuit breaker position" name="Alm1" type="DPC4">
+				<Private type="EFADOName">2608</Private>
+				<Private type="EFA_Alarm_Input">b1733445-7584-48f0-8bfe-f405fb9a6368</Private>
+				<Private type="EFATypeSource">b1733445-7584-48f0-8bfe-f405fb9a6368</Private>
+			</DO>
+		</LNodeType>
+		<DOType id="DPL" cdc="DPL" ext:eBase="Common DO Type">
+			<DA name="vendor" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="hwRev" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="swRev" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="serNum" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="model" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="location" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="owner" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="ePSName" bType="VisString255" valKind="RO" fc="DC" />
+		</DOType>
+		<DOType id="LPL" cdc="LPL" ext:eBase="Common DO Type">
+			<DA name="vendor" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="swRev" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="ldNs" bType="VisString255" fc="EX" />
+			<DA name="d" bType="VisString255" valKind="RO" fc="DC" />
+		</DOType>
+		<DOType id="LPL1" cdc="LPL" ext:eBase="Common DO Type">
+			<DA name="vendor" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="swRev" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="d" bType="VisString255" valKind="RO" fc="DC" />
+		</DOType>
+		<DOType id="ACT" cdc="ACT" ext:eBase="Common DO Type">
+			<DA name="general" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="originSrc" bType="Struct" type="Originator" fc="ST" />
+		</DOType>
+		<DOType id="ACD" cdc="ACD" ext:eBase="Common DO Type">
+			<DA name="general" bType="BOOLEAN" fc="ST" />
+			<DA name="dirGeneral" bType="Enum" type="dir" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+		</DOType>
+		<DOType id="LPL3" cdc="LPL" ext:eBase="Common DO Type">
+			<DA name="vendor" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="swRev" bType="VisString255" valKind="RO" fc="DC" />
+		</DOType>
+		<DOType id="ACT1" cdc="ACT" ext:eBase="Common DO Type">
+			<DA name="general" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+		</DOType>
+		<DOType id="ENS_Beh2" cdc="ENS" ext:eBase="ENS">
+			<DA name="stVal" bType="Enum" type="Beh" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Enum" type="Beh" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="ENS_Health2" cdc="ENS" ext:eBase="ENS">
+			<DA name="stVal" bType="Enum" type="Health" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Enum" type="Health" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="ENC_Mod2" cdc="ENC" ext:eBase="ENC">
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="stVal" bType="Enum" type="Beh" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF" />
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw_INC_INT32" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Enum" type="Beh" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="SPS2" cdc="SPS" ext:eBase="Common DO Type">
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="SPC (DirectWithNormalSecurity)1" cdc="SPC">
+			<Private type="EFAType">SPC</Private>
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="pulseConfig" bType="Struct" valKind="RO" type="PulseConfig" fc="CF" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF">
+				<Val>direct-with-normal-security</Val>
+			</DA>
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw/Oper (BOOL)" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="DPC (DirectWithNormalSecurity)1" cdc="DPC">
+			<Private type="EFAType">DPC</Private>
+			<DA name="stVal" bType="Dbpos" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="pulseConfig" bType="Struct" valKind="RO" type="PulseConfig" fc="CF" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF">
+				<Val>direct-with-normal-security</Val>
+			</DA>
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw/Oper (BOOL)" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Dbpos" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="SPC3" cdc="SPC" ext:eBase="Common DO Type">
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="pulseConfig" bType="Struct" valKind="RO" type="PulseConfig" fc="CF" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF" />
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw_SPC_DPC" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="INS1" cdc="INS" ext:eBase="Common DO Type">
+			<DA name="stVal" bType="INT32" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="INT32" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="INS3" cdc="INS" ext:eBase="Common DO Type">
+			<DA name="stVal" bType="INT32" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="dataNs" bType="VisString255" fc="EX" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="INT32" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="INC1" cdc="INC" ext:eBase="Common DO Type">
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="stVal" bType="INT32" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF" />
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="minVal" bType="INT32" valKind="RO" fc="CF" />
+			<DA name="maxVal" bType="INT32" valKind="RO" fc="CF" />
+			<DA name="stepSize" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw_INC_INT32" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="INT32" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="DPC2" cdc="DPC" ext:eBase="Common DO Type">
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="stVal" bType="Dbpos" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="pulseConfig" bType="Struct" valKind="RO" type="PulseConfig" fc="CF" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF" />
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw_SPC_DPC" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Dbpos" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="SPS4" cdc="SPS" ext:eBase="Common DO Type">
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="dataNs" bType="VisString255" fc="EX" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="SPC4" cdc="SPC" ext:eBase="Common DO Type">
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="pulseConfig" bType="Struct" valKind="RO" type="PulseConfig" fc="CF" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF" />
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="SBOw_SPC_DPC" fc="CO" />
+			<DA name="dataNs" bType="VisString255" fc="EX" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="SPS5" cdc="SPS" ext:eBase="Common DO Type">
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA desc="Data name space" name="dataNs" bType="VisString255" fc="EX">
+				<Val>Automation Studio:2010</Val>
+			</DA>
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+			<DA name="blkEna" bType="BOOLEAN" fc="BL" />
+		</DOType>
+		<DOType id="ASG4" cdc="ASG" ext:eBase="Common DO Type">
+			<DA name="setMag" bType="Struct" type="AnalogueValue" fc="SE" />
+			<DA name="units" bType="Struct" valKind="RO" type="Unit4" fc="CF" />
+			<DA name="minVal" bType="Struct" valKind="RO" type="AnalogueValue" fc="CF" />
+			<DA name="maxVal" bType="Struct" valKind="RO" type="AnalogueValue" fc="CF" />
+			<DA name="stepSize" bType="Struct" valKind="RO" type="AnalogueValue" fc="CF" />
+		</DOType>
+		<DOType id="ING4" cdc="ING" ext:eBase="Common DO Type">
+			<DA name="setVal" bType="INT32" fc="SE" />
+			<DA name="minVal" bType="INT32" valKind="RO" fc="CF" />
+			<DA name="maxVal" bType="INT32" valKind="RO" fc="CF" />
+			<DA name="stepSize" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="units" bType="Struct" valKind="RO" type="Unit4" fc="CF" />
+		</DOType>
+		<DOType id="LPL4" cdc="LPL">
+			<DA name="vendor" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="swRev" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="d" bType="VisString255" valKind="RO" fc="DC" />
+			<DA name="lnNs" bType="VisString255" fc="EX" />
+		</DOType>
+		<DOType id="Mod INC1" cdc="INC" ext:eBase="INC">
+			<DA name="stVal" bType="Enum" type="Beh" fc="ST" />
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="q" bType="Quality" qchg="true" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF" />
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="minVal" bType="INT32" valKind="RO" fc="CF" />
+			<DA name="maxVal" bType="INT32" valKind="RO" fc="CF" />
+			<DA name="stepSize" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="Oper" bType="Struct" type="IEC 61850-8-1 (INC)" fc="CO" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Enum" type="Beh" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="Beh INS1" cdc="INS" ext:eBase="INS">
+			<DA name="stVal" bType="Enum" type="Beh" fc="ST" />
+			<DA name="q" bType="Quality" qchg="true" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Enum" type="Beh" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="Health INS1" cdc="INS" ext:eBase="INS">
+			<DA name="stVal" bType="Enum" type="Health" fc="ST" />
+			<DA name="q" bType="Quality" qchg="true" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Enum" type="Health" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="SPS6" cdc="SPS" ext:eBase="Common DO Type">
+			<DA name="stVal" bType="BOOLEAN" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="BOOLEAN" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DOType id="DPC4" cdc="DPC">
+			<Private type="EFAType">DPC</Private>
+			<DA name="stVal" bType="Dbpos" fc="ST" />
+			<DA name="q" bType="Quality" fc="ST" />
+			<DA name="t" bType="Timestamp" fc="ST" />
+			<DA name="stSeld" bType="BOOLEAN" fc="ST" />
+			<DA name="origin" bType="Struct" type="Originator" fc="ST" />
+			<DA name="pulseConfig" bType="Struct" valKind="RO" type="PulseConfig" fc="CF" />
+			<DA name="ctlModel" bType="Enum" valKind="RO" type="CtlModels" fc="CF">
+				<Val>direct-with-normal-security</Val>
+			</DA>
+			<DA name="sboTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="sboClass" bType="Enum" valKind="RO" type="SboClasses" fc="CF" />
+			<DA name="operTimeout" bType="INT32U" valKind="RO" fc="CF" />
+			<DA name="SBOw" bType="Struct" type="SBOw/Oper (BOOL)" fc="CO" />
+			<DA name="Oper" bType="Struct" type="SBOw/Oper (BOOL)" fc="CO" />
+			<DA name="Cancel" bType="Struct" type="Cancel (BOOL)" fc="CO" />
+			<DA desc="Data name space" name="dataNs" bType="VisString255" fc="EX">
+				<Val>Automation Studio:2010</Val>
+			</DA>
+			<DA name="subEna" bType="BOOLEAN" fc="SV" />
+			<DA name="subVal" bType="Dbpos" fc="SV" />
+			<DA name="subQ" bType="Quality" fc="SV" />
+			<DA name="subID" bType="VisString64" fc="SV" />
+		</DOType>
+		<DAType id="Originator">
+			<BDA name="orCat" bType="Enum" type="orCategory" />
+			<BDA name="orIdent" bType="Octet64" />
+		</DAType>
+		<DAType id="PulseConfig">
+			<BDA name="cmdQual" bType="Enum" valKind="RO" type="cmdQual" />
+			<BDA name="onDur" bType="INT32U" valKind="RO" />
+			<BDA name="offDur" bType="INT32U" valKind="RO" />
+			<BDA name="numPls" bType="INT32U" valKind="RO" />
+		</DAType>
+		<DAType id="SBOw_SPC_DPC">
+			<BDA name="ctlVal" bType="BOOLEAN" />
+			<BDA name="origin" bType="Struct" type="Originator" />
+			<BDA name="ctlNum" bType="INT8U" />
+			<BDA name="T" bType="Timestamp" />
+			<BDA name="Test" bType="BOOLEAN" />
+			<BDA name="Check" bType="Check" />
+			<ProtNs>IEC 61850-8-1:2007</ProtNs>
+		</DAType>
+		<DAType id="SBOw_INC_INT32">
+			<BDA name="ctlVal" bType="INT32" />
+			<BDA name="origin" bType="Struct" type="Originator" />
+			<BDA name="ctlNum" bType="INT8U" />
+			<BDA name="T" bType="Timestamp" />
+			<BDA name="Test" bType="BOOLEAN" />
+			<BDA name="Check" bType="Check" />
+			<ProtNs>IEC 61850-8-1:2007</ProtNs>
+		</DAType>
+		<DAType id="AnalogueValue">
+			<BDA name="f" bType="FLOAT32" valKind="RO" />
+		</DAType>
+		<DAType id="SBOw/Oper (BOOL)">
+			<BDA name="ctlVal" bType="BOOLEAN" />
+			<BDA name="operTm" bType="Timestamp" />
+			<BDA name="origin" bType="Struct" type="Originator" />
+			<BDA name="ctlNum" bType="INT8U" />
+			<BDA name="T" bType="Timestamp" />
+			<BDA name="Test" bType="BOOLEAN" />
+			<BDA name="Check" bType="Check" />
+			<ProtNs>IEC 61850-8-1:2007</ProtNs>
+		</DAType>
+		<DAType id="Cancel (BOOL)">
+			<BDA name="ctlVal" bType="BOOLEAN" />
+			<BDA name="operTm" bType="Timestamp" />
+			<BDA name="origin" bType="Struct" type="Originator" />
+			<BDA name="ctlNum" bType="INT8U" />
+			<BDA name="T" bType="Timestamp" />
+			<BDA name="Test" bType="BOOLEAN" />
+			<ProtNs>IEC 61850-8-1:2007</ProtNs>
+		</DAType>
+		<DAType id="Unit4">
+			<BDA name="SIUnit" bType="Enum" valKind="RO" type="SIUnit4" />
+			<BDA name="multiplier" bType="Enum" valKind="RO" type="multiplier" />
+		</DAType>
+		<DAType id="IEC 61850-8-1 (INC)">
+			<BDA name="ctlVal" bType="Enum" type="Beh" />
+			<BDA name="origin" bType="Struct" type="Originator" />
+			<BDA name="ctlNum" bType="INT8U" />
+			<BDA name="T" bType="Timestamp" />
+			<BDA name="Test" bType="BOOLEAN" />
+			<BDA name="Check" bType="Check" />
+		</DAType>
+		<EnumType id="Beh">
+			<EnumVal ord="1">on</EnumVal>
+			<EnumVal ord="2">blocked</EnumVal>
+			<EnumVal ord="3">test</EnumVal>
+			<EnumVal ord="4">test/blocked</EnumVal>
+			<EnumVal ord="5">off</EnumVal>
+		</EnumType>
+		<EnumType id="Health">
+			<EnumVal ord="1">Ok</EnumVal>
+			<EnumVal ord="2">Warning</EnumVal>
+			<EnumVal ord="3">Alarm</EnumVal>
+		</EnumType>
+		<EnumType id="orCategory">
+			<EnumVal ord="0">not-supported</EnumVal>
+			<EnumVal ord="1">bay-control</EnumVal>
+			<EnumVal ord="2">station-control</EnumVal>
+			<EnumVal ord="3">remote-control</EnumVal>
+			<EnumVal ord="4">automatic-bay</EnumVal>
+			<EnumVal ord="5">automatic-station</EnumVal>
+			<EnumVal ord="6">automatic-remote</EnumVal>
+			<EnumVal ord="7">maintenance</EnumVal>
+			<EnumVal ord="8">process</EnumVal>
+		</EnumType>
+		<EnumType id="cmdQual">
+			<EnumVal ord="0">pulse</EnumVal>
+			<EnumVal ord="1">persistent</EnumVal>
+		</EnumType>
+		<EnumType id="CtlModels">
+			<EnumVal ord="0">status-only</EnumVal>
+			<EnumVal ord="1">direct-with-normal-security</EnumVal>
+			<EnumVal ord="2">sbo-with-normal-security</EnumVal>
+			<EnumVal ord="3">direct-with-enhanced-security</EnumVal>
+			<EnumVal ord="4">sbo-with-enhanced-security</EnumVal>
+		</EnumType>
+		<EnumType id="SboClasses">
+			<EnumVal ord="0">operate-once</EnumVal>
+			<EnumVal ord="1">operate-many</EnumVal>
+		</EnumType>
+		<EnumType id="multiplier">
+			<EnumVal ord="-24">y</EnumVal>
+			<EnumVal ord="-21">z</EnumVal>
+			<EnumVal ord="-18">a</EnumVal>
+			<EnumVal ord="-15">f</EnumVal>
+			<EnumVal ord="-12">p</EnumVal>
+			<EnumVal ord="-9">n</EnumVal>
+			<EnumVal ord="-6">µ</EnumVal>
+			<EnumVal ord="-3">m</EnumVal>
+			<EnumVal ord="-2">c</EnumVal>
+			<EnumVal ord="-1">d</EnumVal>
+			<EnumVal ord="0" />
+			<EnumVal ord="1">da</EnumVal>
+			<EnumVal ord="2">h</EnumVal>
+			<EnumVal ord="3">k</EnumVal>
+			<EnumVal ord="6">M</EnumVal>
+			<EnumVal ord="9">G</EnumVal>
+			<EnumVal ord="12">T</EnumVal>
+			<EnumVal ord="15">P</EnumVal>
+			<EnumVal ord="18">E</EnumVal>
+			<EnumVal ord="21">Z</EnumVal>
+			<EnumVal ord="24">Y</EnumVal>
+		</EnumType>
+		<EnumType id="dir">
+			<EnumVal ord="0">unknown</EnumVal>
+			<EnumVal ord="1">forward</EnumVal>
+			<EnumVal ord="2">backward</EnumVal>
+			<EnumVal ord="3">both</EnumVal>
+		</EnumType>
+		<EnumType id="SIUnit4">
+			<EnumVal ord="1" />
+			<EnumVal ord="2">m</EnumVal>
+			<EnumVal ord="3">kg</EnumVal>
+			<EnumVal ord="4">s</EnumVal>
+			<EnumVal ord="5">A</EnumVal>
+			<EnumVal ord="6">K</EnumVal>
+			<EnumVal ord="7">mol</EnumVal>
+			<EnumVal ord="8">cd</EnumVal>
+			<EnumVal ord="9">deg</EnumVal>
+			<EnumVal ord="10">rad</EnumVal>
+			<EnumVal ord="11">sr</EnumVal>
+			<EnumVal ord="21">Gy</EnumVal>
+			<EnumVal ord="22">q</EnumVal>
+			<EnumVal ord="23">°C</EnumVal>
+			<EnumVal ord="24">Sv</EnumVal>
+			<EnumVal ord="25">F</EnumVal>
+			<EnumVal ord="26">C</EnumVal>
+			<EnumVal ord="27">S</EnumVal>
+			<EnumVal ord="28">H</EnumVal>
+			<EnumVal ord="29">V</EnumVal>
+			<EnumVal ord="30">ohm</EnumVal>
+			<EnumVal ord="31">J</EnumVal>
+			<EnumVal ord="32">N</EnumVal>
+			<EnumVal ord="33">Hz</EnumVal>
+			<EnumVal ord="34">lx</EnumVal>
+			<EnumVal ord="35">Lm</EnumVal>
+			<EnumVal ord="36">Wb</EnumVal>
+			<EnumVal ord="37">T</EnumVal>
+			<EnumVal ord="38">W</EnumVal>
+			<EnumVal ord="39">Pa</EnumVal>
+			<EnumVal ord="41">m²</EnumVal>
+			<EnumVal ord="42">m³</EnumVal>
+			<EnumVal ord="43">m/s</EnumVal>
+			<EnumVal ord="44">m/s²</EnumVal>
+			<EnumVal ord="45">m³/s</EnumVal>
+			<EnumVal ord="46">m/m³</EnumVal>
+			<EnumVal ord="47">M</EnumVal>
+			<EnumVal ord="48">kg/m³</EnumVal>
+			<EnumVal ord="49">m²/s</EnumVal>
+			<EnumVal ord="50">W/m K</EnumVal>
+			<EnumVal ord="51">J/K</EnumVal>
+			<EnumVal ord="52">ppm</EnumVal>
+			<EnumVal ord="53">1/s</EnumVal>
+			<EnumVal ord="54">rad/s</EnumVal>
+			<EnumVal ord="55">W/m²</EnumVal>
+			<EnumVal ord="56">J/m²</EnumVal>
+			<EnumVal ord="57">S/m</EnumVal>
+			<EnumVal ord="58">K/s</EnumVal>
+			<EnumVal ord="59">Pa/s</EnumVal>
+			<EnumVal ord="60">J/kg K</EnumVal>
+			<EnumVal ord="61">VA</EnumVal>
+			<EnumVal ord="62">Watts</EnumVal>
+			<EnumVal ord="63">VAr</EnumVal>
+			<EnumVal ord="64">phi</EnumVal>
+			<EnumVal ord="65">cos(phi)</EnumVal>
+			<EnumVal ord="66">Vs</EnumVal>
+			<EnumVal ord="67">V²</EnumVal>
+			<EnumVal ord="68">As</EnumVal>
+			<EnumVal ord="69">A²</EnumVal>
+			<EnumVal ord="70">A²t</EnumVal>
+			<EnumVal ord="71">VAh</EnumVal>
+			<EnumVal ord="72">Wh</EnumVal>
+			<EnumVal ord="73">VArh</EnumVal>
+			<EnumVal ord="74">V/Hz</EnumVal>
+			<EnumVal ord="75">Hz/s</EnumVal>
+			<EnumVal ord="76">char</EnumVal>
+			<EnumVal ord="77">char/s</EnumVal>
+			<EnumVal ord="78">kgm²</EnumVal>
+			<EnumVal ord="79">dB</EnumVal>
+			<EnumVal ord="80">1/Wh</EnumVal>
+			<EnumVal ord="81">W/s</EnumVal>
+			<EnumVal ord="82">l/s</EnumVal>
+			<EnumVal ord="83">dBm</EnumVal>
+		</EnumType>
+	</DataTypeTemplates>
+</SCL>
